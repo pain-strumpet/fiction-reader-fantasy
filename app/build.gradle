@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace 'com.reader.fiction.fantasy'
-    compileSdk 36 // ← safest for now; 36 is in preview and may break things
+    compileSdk 35  // Changed from 34 to 35
 
     defaultConfig {
         applicationId 'com.reader.fiction.fantasy'
         minSdk 24
-        targetSdk 34
+        targetSdk 34  // You can keep this at 34 or update to 35
         versionCode 1
         versionName '1.0'
     }
@@ -19,7 +19,8 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
         }
     }
 
@@ -27,13 +28,13 @@ android {
         jvmToolchain(21)
     }
 
-
     buildFeatures {
         compose true
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.10" // matches Kotlin 2.2.0 + Compose 1.8.x
+        // Use a compiler extension compatible with Kotlin 2.2 and Compose 1.8+
+        kotlinCompilerExtensionVersion = "1.5.10"
     }
 }
 
@@ -42,21 +43,22 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.9.2"
     implementation "androidx.activity:activity-compose:1.10.1"
 
-    // Jetpack Compose BOM
-    implementation platform("androidx.compose:compose-bom:2025.07.00")
+    // Compose BOM aligned with Kotlin 2.2.0 + extension 1.5.10
+    implementation platform("androidx.compose:compose-bom:2025.05.00")
     implementation "androidx.compose.ui:ui"
     implementation "androidx.compose.material3:material3"
+    // Required for animateColorAsState
+    implementation "androidx.compose.animation:animation"
     implementation "androidx.compose.ui:ui-tooling-preview"
     debugImplementation "androidx.compose.ui:ui-tooling"
 
-    // RevenueCat for subscriptions
+    // RevenueCat Android SDK v9.x
     implementation "com.revenuecat.purchases:purchases:9.1.2"
 
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2"
 
-    // Material Components (to satisfy theme attribute linking)
+    // Material components (for theme linking)
     implementation "com.google.android.material:material:1.12.0"
-
 }

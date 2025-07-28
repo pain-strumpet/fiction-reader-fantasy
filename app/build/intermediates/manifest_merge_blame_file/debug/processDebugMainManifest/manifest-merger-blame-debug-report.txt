@@ -136,11 +136,11 @@
 78-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\7c86e0aada8cafd17b0b617b0a4beb60\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
 79
 80        <activity
-80-->[androidx.compose.ui:ui-tooling-android:1.8.3] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\79f3cede80f71e814abb1bc7e44fd323\transformed\jetified-ui-tooling-release\AndroidManifest.xml:23:9-25:39
+80-->[androidx.compose.ui:ui-tooling-android:1.8.1] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\0cdac89fc3a8b280cd8769d5c3edd623\transformed\jetified-ui-tooling-release\AndroidManifest.xml:23:9-25:39
 81            android:name="androidx.compose.ui.tooling.PreviewActivity"
-81-->[androidx.compose.ui:ui-tooling-android:1.8.3] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\79f3cede80f71e814abb1bc7e44fd323\transformed\jetified-ui-tooling-release\AndroidManifest.xml:24:13-71
+81-->[androidx.compose.ui:ui-tooling-android:1.8.1] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\0cdac89fc3a8b280cd8769d5c3edd623\transformed\jetified-ui-tooling-release\AndroidManifest.xml:24:13-71
 82            android:exported="true" />
-82-->[androidx.compose.ui:ui-tooling-android:1.8.3] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\79f3cede80f71e814abb1bc7e44fd323\transformed\jetified-ui-tooling-release\AndroidManifest.xml:25:13-36
+82-->[androidx.compose.ui:ui-tooling-android:1.8.1] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\0cdac89fc3a8b280cd8769d5c3edd623\transformed\jetified-ui-tooling-release\AndroidManifest.xml:25:13-36
 83
 84        <provider
 84-->[androidx.emoji2:emoji2:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\fbd6c0711d3a19fb4a63102ce063e8bc\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:24:9-32:20

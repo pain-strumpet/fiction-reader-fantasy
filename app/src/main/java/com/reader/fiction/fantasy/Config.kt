@@ -12,7 +12,7 @@ object Config {
      * RevenueCat dashboard under Project Settings -> API Keys.  Without this
      * key RevenueCat cannot communicate with your backend.
      */
-    const val REVENUECAT_PUBLIC_API_KEY: String = "REPLACE_WITH_YOUR_PUBLIC_API_KEY"
+    const val REVENUECAT_PUBLIC_API_KEY: String = "goog_IHGwhjvehoXfqcetXNCzLuiedBa"
 
     /**
      * The entitlement identifier defined in RevenueCat.  This string should
