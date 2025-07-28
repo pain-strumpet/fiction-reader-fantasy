@@ -55,12 +55,12 @@
 34-->[androidx.core:core:1.16.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\26810629c1a0a6f21170423a9767c3d6\transformed\core-1.16.0\AndroidManifest.xml:28:18-86
 35        android:debuggable="true"
 36        android:extractNativeLibs="false"
-37        android:icon="@android:drawable/ic_dialog_info"
-37-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:11:9-56
+37        android:icon="@mipmap/ic_launcher"
+37-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:10:9-43
 38        android:label="@string/app_name"
-38-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:10:9-41
-39        android:roundIcon="@android:drawable/ic_dialog_info"
-39-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:12:9-61
+38-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:12:9-41
+39        android:roundIcon="@mipmap/ic_launcher_round"
+39-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:11:9-54
 40        android:supportsRtl="true"
 40-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:13:9-35
 41        android:testOnly="true"

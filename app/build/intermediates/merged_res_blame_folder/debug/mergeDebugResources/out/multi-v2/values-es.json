@@ -72,24 +72,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\ce4b984eedb35dd8437df224445604cc\\transformed\\jetified-foundation-release\\res\\values-es\\values-es.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,135,235",
-                        "endColumns": "79,99,101",
-                        "endOffsets": "130,230,332"
-                    },
-                    "to": {
-                        "startLines": "33,213,214",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "3059,20736,20836",
-                        "endColumns": "79,99,101",
-                        "endOffsets": "3134,20831,20933"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\669c970b2c53c26b874ec2ea4741b8bb\\transformed\\jetified-ui-release\\res\\values-es\\values-es.xml",
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\ded296a9536f0b038f03d7db47a711c8\\transformed\\jetified-ui-release\\res\\values-es\\values-es.xml",
                     "from": {
                         "startLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -106,7 +89,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\b56c3bb778184dde3dbedda2fd8844ba\\transformed\\jetified-material-release\\res\\values-es\\values-es.xml",
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\3db5231d314b2022e913f48f67f2e867\\transformed\\jetified-material-release\\res\\values-es\\values-es.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -156,6 +139,23 @@
                         "startOffsets": "7965,8086,8205,8328,8449,8549,8649,8766,8909,9027,9175,9260,9367,9464,9566,9680,9798,9910,10048,10185,10329,10498,10634,10754,10876,11006,11104,11200,11321,11456,11559,11673,11788,11925,12066,12177,12282,12369,12465,12561,12677,12764,12850,12961,13044,13128,13229,13335,13435,13538,13627,13738,13839,13948,14067,14150,14267",
                         "endColumns": "120,118,122,120,99,99,116,142,117,147,84,106,96,101,113,117,111,137,136,143,168,135,119,121,129,97,95,120,134,102,113,114,136,140,110,104,86,95,95,115,86,85,110,82,83,100,105,99,102,88,110,100,108,118,82,116,108",
                         "endOffsets": "8081,8200,8323,8444,8544,8644,8761,8904,9022,9170,9255,9362,9459,9561,9675,9793,9905,10043,10180,10324,10493,10629,10749,10871,11001,11099,11195,11316,11451,11554,11668,11783,11920,12061,12172,12277,12364,12460,12556,12672,12759,12845,12956,13039,13123,13224,13330,13430,13533,13622,13733,13834,13943,14062,14145,14262,14371"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\d17da97119546877dc059373c517ce4d\\transformed\\jetified-foundation-release\\res\\values-es\\values-es.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,135,235",
+                        "endColumns": "79,99,101",
+                        "endOffsets": "130,230,332"
+                    },
+                    "to": {
+                        "startLines": "33,213,214",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "3059,20736,20836",
+                        "endColumns": "79,99,101",
+                        "endOffsets": "3134,20831,20933"
                     }
                 }
             ]

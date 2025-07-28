@@ -4,6 +4,23 @@
             "outputFile": "com.reader.fiction.fantasy.app-mergeDebugResources-62:/values-es-rUS/values-es-rUS.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\d17da97119546877dc059373c517ce4d\\transformed\\jetified-foundation-release\\res\\values-es-rUS\\values-es-rUS.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,135,235",
+                        "endColumns": "79,99,101",
+                        "endOffsets": "130,230,332"
+                    },
+                    "to": {
+                        "startLines": "33,213,214",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "3044,20670,20770",
+                        "endColumns": "79,99,101",
+                        "endOffsets": "3119,20765,20867"
+                    }
+                },
+                {
                     "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\7c86e0aada8cafd17b0b617b0a4beb60\\transformed\\jetified-play-services-basement-18.4.0\\res\\values-es-rUS\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -18,23 +35,6 @@
                         "startOffsets": "5832",
                         "endColumns": "145",
                         "endOffsets": "5973"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\b56c3bb778184dde3dbedda2fd8844ba\\transformed\\jetified-material-release\\res\\values-es-rUS\\values-es-rUS.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "88",
-                        "endOffsets": "139"
-                    },
-                    "to": {
-                        "startLines": "149",
-                        "startColumns": "4",
-                        "startOffsets": "15301",
-                        "endColumns": "88",
-                        "endOffsets": "15385"
                     }
                 },
                 {
@@ -74,37 +74,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\669c970b2c53c26b874ec2ea4741b8bb\\transformed\\jetified-ui-release\\res\\values-es-rUS\\values-es-rUS.xml",
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\3db5231d314b2022e913f48f67f2e867\\transformed\\jetified-material-release\\res\\values-es-rUS\\values-es-rUS.xml",
                     "from": {
-                        "startLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "186,285,367,465,568,657,736,832,924,1011,1098,1188,1265,1350,1426,1506,1582,1660,1730",
-                        "endColumns": "98,81,97,102,88,78,95,91,86,86,89,76,84,75,79,75,77,69,122",
-                        "endOffsets": "280,362,460,563,652,731,827,919,1006,1093,1183,1260,1345,1421,1501,1577,1655,1725,1848"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "88",
+                        "endOffsets": "139"
                     },
                     "to": {
-                        "startLines": "49,50,69,70,71,76,77,195,196,198,199,203,205,206,207,208,210,211,212",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4616,4715,7126,7224,7327,7708,7787,19146,19238,19408,19495,19827,19981,20066,20142,20222,20399,20477,20547",
-                        "endColumns": "98,81,97,102,88,78,95,91,86,86,89,76,84,75,79,75,77,69,122",
-                        "endOffsets": "4710,4792,7219,7322,7411,7782,7878,19233,19320,19490,19580,19899,20061,20137,20217,20293,20472,20542,20665"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\ce4b984eedb35dd8437df224445604cc\\transformed\\jetified-foundation-release\\res\\values-es-rUS\\values-es-rUS.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,135,235",
-                        "endColumns": "79,99,101",
-                        "endOffsets": "130,230,332"
-                    },
-                    "to": {
-                        "startLines": "33,213,214",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "3044,20670,20770",
-                        "endColumns": "79,99,101",
-                        "endOffsets": "3119,20765,20867"
+                        "startLines": "149",
+                        "startColumns": "4",
+                        "startOffsets": "15301",
+                        "endColumns": "88",
+                        "endOffsets": "15385"
                     }
                 },
                 {
@@ -139,6 +122,23 @@
                         "startOffsets": "4797,4905,5071,5203,5311,5472,5603,5726,5978,6149,6258,6428,6561,6738,6916,6986,7048",
                         "endColumns": "107,165,131,107,160,130,122,105,170,108,169,132,176,177,69,61,77",
                         "endOffsets": "4900,5066,5198,5306,5467,5598,5721,5827,6144,6253,6423,6556,6733,6911,6981,7043,7121"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\ded296a9536f0b038f03d7db47a711c8\\transformed\\jetified-ui-release\\res\\values-es-rUS\\values-es-rUS.xml",
+                    "from": {
+                        "startLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "186,285,367,465,568,657,736,832,924,1011,1098,1188,1265,1350,1426,1506,1582,1660,1730",
+                        "endColumns": "98,81,97,102,88,78,95,91,86,86,89,76,84,75,79,75,77,69,122",
+                        "endOffsets": "280,362,460,563,652,731,827,919,1006,1093,1183,1260,1345,1421,1501,1577,1655,1725,1848"
+                    },
+                    "to": {
+                        "startLines": "49,50,69,70,71,76,77,195,196,198,199,203,205,206,207,208,210,211,212",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4616,4715,7126,7224,7327,7708,7787,19146,19238,19408,19495,19827,19981,20066,20142,20222,20399,20477,20547",
+                        "endColumns": "98,81,97,102,88,78,95,91,86,86,89,76,84,75,79,75,77,69,122",
+                        "endOffsets": "4710,4792,7219,7322,7411,7782,7878,19233,19320,19490,19580,19899,20061,20137,20217,20293,20472,20542,20665"
                     }
                 },
                 {

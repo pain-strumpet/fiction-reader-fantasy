@@ -4,20 +4,20 @@
             "outputFile": "com.reader.fiction.fantasy.app-mergeDebugResources-62:/values-ne/values-ne.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\b56c3bb778184dde3dbedda2fd8844ba\\transformed\\jetified-material-release\\res\\values-ne\\values-ne.xml",
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\d17da97119546877dc059373c517ce4d\\transformed\\jetified-foundation-release\\res\\values-ne\\values-ne.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "87",
-                        "endOffsets": "138"
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,128,213",
+                        "endColumns": "72,84,90",
+                        "endOffsets": "123,208,299"
                     },
                     "to": {
-                        "startLines": "149",
-                        "startColumns": "4",
-                        "startOffsets": "15375",
-                        "endColumns": "87",
-                        "endOffsets": "15458"
+                        "startLines": "33,213,214",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "3072,20689,20774",
+                        "endColumns": "72,84,90",
+                        "endOffsets": "3140,20769,20860"
                     }
                 },
                 {
@@ -38,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\669c970b2c53c26b874ec2ea4741b8bb\\transformed\\jetified-ui-release\\res\\values-ne\\values-ne.xml",
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\3db5231d314b2022e913f48f67f2e867\\transformed\\jetified-material-release\\res\\values-ne\\values-ne.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "87",
+                        "endOffsets": "138"
+                    },
+                    "to": {
+                        "startLines": "149",
+                        "startColumns": "4",
+                        "startOffsets": "15375",
+                        "endColumns": "87",
+                        "endOffsets": "15458"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\ded296a9536f0b038f03d7db47a711c8\\transformed\\jetified-ui-release\\res\\values-ne\\values-ne.xml",
                     "from": {
                         "startLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -52,23 +69,6 @@
                         "startOffsets": "4607,4706,7123,7217,7314,7688,7770,19180,19267,19437,19527,19865,20015,20099,20174,20247,20420,20501,20569",
                         "endColumns": "98,89,93,96,85,81,95,86,85,89,92,76,83,74,72,71,80,67,119",
                         "endOffsets": "4701,4791,7212,7309,7395,7765,7861,19262,19348,19522,19615,19937,20094,20169,20242,20314,20496,20564,20684"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\ce4b984eedb35dd8437df224445604cc\\transformed\\jetified-foundation-release\\res\\values-ne\\values-ne.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,128,213",
-                        "endColumns": "72,84,90",
-                        "endOffsets": "123,208,299"
-                    },
-                    "to": {
-                        "startLines": "33,213,214",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "3072,20689,20774",
-                        "endColumns": "72,84,90",
-                        "endOffsets": "3140,20769,20860"
                     }
                 },
                 {

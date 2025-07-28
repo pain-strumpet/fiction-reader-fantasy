@@ -38,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\3db5231d314b2022e913f48f67f2e867\\transformed\\jetified-material-release\\res\\values-sk\\values-sk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "93",
+                        "endOffsets": "144"
+                    },
+                    "to": {
+                        "startLines": "151",
+                        "startColumns": "4",
+                        "startOffsets": "15091",
+                        "endColumns": "93",
+                        "endOffsets": "15180"
+                    }
+                },
+                {
                     "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\26810629c1a0a6f21170423a9767c3d6\\transformed\\core-1.16.0\\res\\values-sk\\values-sk.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -55,23 +72,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\ce4b984eedb35dd8437df224445604cc\\transformed\\jetified-foundation-release\\res\\values-sk\\values-sk.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,143,227",
-                        "endColumns": "87,83,86",
-                        "endOffsets": "138,222,309"
-                    },
-                    "to": {
-                        "startLines": "35,215,216",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "3140,20334,20418",
-                        "endColumns": "87,83,86",
-                        "endOffsets": "3223,20413,20500"
-                    }
-                },
-                {
                     "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\7c86e0aada8cafd17b0b617b0a4beb60\\transformed\\jetified-play-services-basement-18.4.0\\res\\values-sk\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -86,6 +86,23 @@
                         "startOffsets": "5847",
                         "endColumns": "138",
                         "endOffsets": "5981"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\d17da97119546877dc059373c517ce4d\\transformed\\jetified-foundation-release\\res\\values-sk\\values-sk.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,143,227",
+                        "endColumns": "87,83,86",
+                        "endOffsets": "138,222,309"
+                    },
+                    "to": {
+                        "startLines": "35,215,216",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "3140,20334,20418",
+                        "endColumns": "87,83,86",
+                        "endOffsets": "3223,20413,20500"
                     }
                 },
                 {
@@ -125,7 +142,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\669c970b2c53c26b874ec2ea4741b8bb\\transformed\\jetified-ui-release\\res\\values-sk\\values-sk.xml",
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\ded296a9536f0b038f03d7db47a711c8\\transformed\\jetified-ui-release\\res\\values-sk\\values-sk.xml",
                     "from": {
                         "startLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -139,23 +156,6 @@
                         "startOffsets": "4669,4764,7115,7210,7313,7706,7785,18845,18935,19095,19178,19506,19654,19744,19822,19898,20074,20152,20220",
                         "endColumns": "94,83,94,102,91,78,93,89,80,82,86,71,89,77,75,74,77,67,113",
                         "endOffsets": "4759,4843,7205,7308,7400,7780,7874,18930,19011,19173,19260,19573,19739,19817,19893,19968,20147,20215,20329"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\b56c3bb778184dde3dbedda2fd8844ba\\transformed\\jetified-material-release\\res\\values-sk\\values-sk.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "93",
-                        "endOffsets": "144"
-                    },
-                    "to": {
-                        "startLines": "151",
-                        "startColumns": "4",
-                        "startOffsets": "15091",
-                        "endColumns": "93",
-                        "endOffsets": "15180"
                     }
                 }
             ]

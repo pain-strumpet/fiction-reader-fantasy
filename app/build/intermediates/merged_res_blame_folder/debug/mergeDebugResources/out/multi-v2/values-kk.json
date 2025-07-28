@@ -21,20 +21,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\ce4b984eedb35dd8437df224445604cc\\transformed\\jetified-foundation-release\\res\\values-kk\\values-kk.xml",
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\3db5231d314b2022e913f48f67f2e867\\transformed\\jetified-material-release\\res\\values-kk\\values-kk.xml",
                     "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,133,225",
-                        "endColumns": "77,91,95",
-                        "endOffsets": "128,220,316"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "89",
+                        "endOffsets": "140"
                     },
                     "to": {
-                        "startLines": "33,213,214",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "3014,20197,20289",
-                        "endColumns": "77,91,95",
-                        "endOffsets": "3087,20284,20380"
+                        "startLines": "149",
+                        "startColumns": "4",
+                        "startOffsets": "14953",
+                        "endColumns": "89",
+                        "endOffsets": "15038"
                     }
                 },
                 {
@@ -52,6 +52,23 @@
                         "startOffsets": "3507,3607,3709,3811,3914,4018,4115,19832",
                         "endColumns": "99,101,101,102,103,96,110,100",
                         "endOffsets": "3602,3704,3806,3909,4013,4110,4221,19928"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\d17da97119546877dc059373c517ce4d\\transformed\\jetified-foundation-release\\res\\values-kk\\values-kk.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,133,225",
+                        "endColumns": "77,91,95",
+                        "endOffsets": "128,220,316"
+                    },
+                    "to": {
+                        "startLines": "33,213,214",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "3014,20197,20289",
+                        "endColumns": "77,91,95",
+                        "endOffsets": "3087,20284,20380"
                     }
                 },
                 {
@@ -125,24 +142,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\b56c3bb778184dde3dbedda2fd8844ba\\transformed\\jetified-material-release\\res\\values-kk\\values-kk.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "89",
-                        "endOffsets": "140"
-                    },
-                    "to": {
-                        "startLines": "149",
-                        "startColumns": "4",
-                        "startOffsets": "14953",
-                        "endColumns": "89",
-                        "endOffsets": "15038"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\669c970b2c53c26b874ec2ea4741b8bb\\transformed\\jetified-ui-release\\res\\values-kk\\values-kk.xml",
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\ded296a9536f0b038f03d7db47a711c8\\transformed\\jetified-ui-release\\res\\values-kk\\values-kk.xml",
                     "from": {
                         "startLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
