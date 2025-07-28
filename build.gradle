@@ -1,0 +1,2 @@
+// Root build.gradle intentionally left empty.
+// All configuration is handled in settings.gradle and app/build.gradle.

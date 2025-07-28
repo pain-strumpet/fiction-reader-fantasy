@@ -1,0 +1,242 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.reader.fiction.fantasy"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="34" />
+10
+11    <!-- The app needs internet access to communicate with RevenueCat and Google Play. -->
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:6:5-67
+12-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:6:22-64
+13    <uses-permission android:name="com.android.vending.BILLING" />
+13-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:10:5-67
+13-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:10:22-64
+14
+15    <queries>
+15-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:12:5-19:15
+16        <intent>
+16-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:13:9-15:18
+17            <action android:name="com.android.vending.billing.InAppBillingService.BIND" />
+17-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:14:13-91
+17-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:14:21-88
+18        </intent>
+19        <intent>
+19-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:16:9-18:18
+20            <action android:name="com.google.android.apps.play.billingtestcompanion.BillingOverrideService.BIND" />
+20-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:17:13-116
+20-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:17:21-113
+21        </intent>
+22    </queries>
+23
+24    <permission
+24-->[androidx.core:core:1.16.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\26810629c1a0a6f21170423a9767c3d6\transformed\core-1.16.0\AndroidManifest.xml:22:5-24:47
+25        android:name="com.reader.fiction.fantasy.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+25-->[androidx.core:core:1.16.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\26810629c1a0a6f21170423a9767c3d6\transformed\core-1.16.0\AndroidManifest.xml:23:9-81
+26        android:protectionLevel="signature" />
+26-->[androidx.core:core:1.16.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\26810629c1a0a6f21170423a9767c3d6\transformed\core-1.16.0\AndroidManifest.xml:24:9-44
+27
+28    <uses-permission android:name="com.reader.fiction.fantasy.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+28-->[androidx.core:core:1.16.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\26810629c1a0a6f21170423a9767c3d6\transformed\core-1.16.0\AndroidManifest.xml:26:5-97
+28-->[androidx.core:core:1.16.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\26810629c1a0a6f21170423a9767c3d6\transformed\core-1.16.0\AndroidManifest.xml:26:22-94
+29    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+30    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+30-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\6d2682c904595d2ff1a5a38cb2581281\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:24:5-79
+30-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\6d2682c904595d2ff1a5a38cb2581281\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:24:22-76
+31
+32    <application
+32-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:8:5-23:19
+33        android:allowBackup="true"
+33-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:9:9-35
+34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+34-->[androidx.core:core:1.16.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\26810629c1a0a6f21170423a9767c3d6\transformed\core-1.16.0\AndroidManifest.xml:28:18-86
+35        android:debuggable="true"
+36        android:extractNativeLibs="false"
+37        android:icon="@android:drawable/ic_dialog_info"
+37-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:11:9-56
+38        android:label="@string/app_name"
+38-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:10:9-41
+39        android:roundIcon="@android:drawable/ic_dialog_info"
+39-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:12:9-61
+40        android:supportsRtl="true"
+40-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:13:9-35
+41        android:testOnly="true"
+42        android:theme="@style/Theme.FictionReader" >
+42-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:14:9-51
+43        <activity
+43-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:15:9-22:20
+44            android:name="com.reader.fiction.fantasy.MainActivity"
+44-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:16:13-41
+45            android:exported="true" >
+45-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:17:13-36
+46            <intent-filter>
+46-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:18:13-21:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:19:17-69
+47-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:19:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:20:17-77
+49-->C:\Users\cherr\projects\fictionreader\app\src\main\AndroidManifest.xml:20:27-74
+50            </intent-filter>
+51        </activity>
+52        <activity
+52-->[com.revenuecat.purchases:purchases:9.1.2] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\9426ab7cedcacb12e958b971d5e93bab\transformed\jetified-purchases-9.1.2\AndroidManifest.xml:10:9-13:75
+53            android:name="com.revenuecat.purchases.amazon.purchasing.ProxyAmazonBillingActivity"
+53-->[com.revenuecat.purchases:purchases:9.1.2] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\9426ab7cedcacb12e958b971d5e93bab\transformed\jetified-purchases-9.1.2\AndroidManifest.xml:11:13-97
+54            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+54-->[com.revenuecat.purchases:purchases:9.1.2] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\9426ab7cedcacb12e958b971d5e93bab\transformed\jetified-purchases-9.1.2\AndroidManifest.xml:12:13-96
+55            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+55-->[com.revenuecat.purchases:purchases:9.1.2] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\9426ab7cedcacb12e958b971d5e93bab\transformed\jetified-purchases-9.1.2\AndroidManifest.xml:13:13-72
+56
+57        <meta-data
+57-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:22:9-24:37
+58            android:name="com.google.android.play.billingclient.version"
+58-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:23:13-73
+59            android:value="8.0.0" />
+59-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:24:13-34
+60
+61        <activity
+61-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:26:9-30:75
+62            android:name="com.android.billingclient.api.ProxyBillingActivity"
+62-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:27:13-78
+63            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+63-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:28:13-96
+64            android:exported="false"
+64-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:29:13-37
+65            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+65-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:30:13-72
+66        <activity
+66-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:31:9-35:75
+67            android:name="com.android.billingclient.api.ProxyBillingActivityV2"
+67-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:32:13-80
+68            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+68-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:33:13-96
+69            android:exported="false"
+69-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:34:13-37
+70            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+70-->[com.android.billingclient:billing:8.0.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\4488e628e1c97127241dc3294d272d86\transformed\jetified-billing-8.0.0\AndroidManifest.xml:35:13-72
+71        <activity
+71-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\acf95f18a8888ad85db00361b09dd0b0\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+72            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+72-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\acf95f18a8888ad85db00361b09dd0b0\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+73            android:exported="false"
+73-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\acf95f18a8888ad85db00361b09dd0b0\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+74            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+74-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\acf95f18a8888ad85db00361b09dd0b0\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+75
+76        <meta-data
+76-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\7c86e0aada8cafd17b0b617b0a4beb60\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
+77            android:name="com.google.android.gms.version"
+77-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\7c86e0aada8cafd17b0b617b0a4beb60\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
+78            android:value="@integer/google_play_services_version" />
+78-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\7c86e0aada8cafd17b0b617b0a4beb60\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
+79
+80        <activity
+80-->[androidx.compose.ui:ui-tooling-android:1.8.3] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\79f3cede80f71e814abb1bc7e44fd323\transformed\jetified-ui-tooling-release\AndroidManifest.xml:23:9-25:39
+81            android:name="androidx.compose.ui.tooling.PreviewActivity"
+81-->[androidx.compose.ui:ui-tooling-android:1.8.3] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\79f3cede80f71e814abb1bc7e44fd323\transformed\jetified-ui-tooling-release\AndroidManifest.xml:24:13-71
+82            android:exported="true" />
+82-->[androidx.compose.ui:ui-tooling-android:1.8.3] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\79f3cede80f71e814abb1bc7e44fd323\transformed\jetified-ui-tooling-release\AndroidManifest.xml:25:13-36
+83
+84        <provider
+84-->[androidx.emoji2:emoji2:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\fbd6c0711d3a19fb4a63102ce063e8bc\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:24:9-32:20
+85            android:name="androidx.startup.InitializationProvider"
+85-->[androidx.emoji2:emoji2:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\fbd6c0711d3a19fb4a63102ce063e8bc\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:25:13-67
+86            android:authorities="com.reader.fiction.fantasy.androidx-startup"
+86-->[androidx.emoji2:emoji2:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\fbd6c0711d3a19fb4a63102ce063e8bc\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:26:13-68
+87            android:exported="false" >
+87-->[androidx.emoji2:emoji2:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\fbd6c0711d3a19fb4a63102ce063e8bc\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:27:13-37
+88            <meta-data
+88-->[androidx.emoji2:emoji2:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\fbd6c0711d3a19fb4a63102ce063e8bc\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:29:13-31:52
+89                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+89-->[androidx.emoji2:emoji2:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\fbd6c0711d3a19fb4a63102ce063e8bc\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:30:17-75
+90                android:value="androidx.startup" />
+90-->[androidx.emoji2:emoji2:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\fbd6c0711d3a19fb4a63102ce063e8bc\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:31:17-49
+91            <meta-data
+91-->[androidx.lifecycle:lifecycle-process:2.9.2] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\46de99fd3e4163787fa0d5644fa79a9b\transformed\jetified-lifecycle-process-2.9.2\AndroidManifest.xml:29:13-31:52
+92                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+92-->[androidx.lifecycle:lifecycle-process:2.9.2] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\46de99fd3e4163787fa0d5644fa79a9b\transformed\jetified-lifecycle-process-2.9.2\AndroidManifest.xml:30:17-78
+93                android:value="androidx.startup" />
+93-->[androidx.lifecycle:lifecycle-process:2.9.2] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\46de99fd3e4163787fa0d5644fa79a9b\transformed\jetified-lifecycle-process-2.9.2\AndroidManifest.xml:31:17-49
+94            <meta-data
+94-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+95                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+95-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+96                android:value="androidx.startup" />
+96-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+97        </provider>
+98
+99        <receiver
+99-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+100            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+100-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+101            android:directBootAware="false"
+101-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+102            android:enabled="true"
+102-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+103            android:exported="true"
+103-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+104            android:permission="android.permission.DUMP" >
+104-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+105            <intent-filter>
+105-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+106                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+106-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+106-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+107            </intent-filter>
+108            <intent-filter>
+108-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+109                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+109-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+109-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+110            </intent-filter>
+111            <intent-filter>
+111-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+112                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+112-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+112-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+113            </intent-filter>
+114            <intent-filter>
+114-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+115                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+115-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+115-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\b55513ed0830519e782b308c3ce5d35c\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+116            </intent-filter>
+117        </receiver>
+118
+119        <service
+119-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\6d2682c904595d2ff1a5a38cb2581281\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:28:9-34:19
+120            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+120-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\6d2682c904595d2ff1a5a38cb2581281\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:29:13-103
+121            android:exported="false" >
+121-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\6d2682c904595d2ff1a5a38cb2581281\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:30:13-37
+122            <meta-data
+122-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\6d2682c904595d2ff1a5a38cb2581281\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:31:13-33:39
+123                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+123-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\6d2682c904595d2ff1a5a38cb2581281\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:32:17-94
+124                android:value="cct" />
+124-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\6d2682c904595d2ff1a5a38cb2581281\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:33:17-36
+125        </service>
+126        <service
+126-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\68687a3d0bde9bac123d1815a43f21c5\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:26:9-30:19
+127            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+127-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\68687a3d0bde9bac123d1815a43f21c5\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:27:13-117
+128            android:exported="false"
+128-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\68687a3d0bde9bac123d1815a43f21c5\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:28:13-37
+129            android:permission="android.permission.BIND_JOB_SERVICE" >
+129-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\68687a3d0bde9bac123d1815a43f21c5\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:29:13-69
+130        </service>
+131
+132        <receiver
+132-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\68687a3d0bde9bac123d1815a43f21c5\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:32:9-34:40
+133            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+133-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\68687a3d0bde9bac123d1815a43f21c5\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:33:13-132
+134            android:exported="false" />
+134-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\cherr\.gradle\caches\9.0-milestone-1\transforms\68687a3d0bde9bac123d1815a43f21c5\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:34:13-37
+135    </application>
+136
+137</manifest>

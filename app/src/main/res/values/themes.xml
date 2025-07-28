@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme for light mode. -->
+    <style name="Theme.FictionReader" parent="Theme.Material3.DayNight">
+    <!-- Customize your light theme here. You can override colors and styles as
+             needed. Using DayNight ensures the same theme can adapt to dark mode. -->
+        <item name="colorPrimary">@android:color/holo_blue_dark</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@android:color/holo_orange_light</item>
+    </style>
+</resources>

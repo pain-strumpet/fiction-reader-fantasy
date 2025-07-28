@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme for dark mode. -->
+    <style name="Theme.FictionReader" parent="Theme.Material3.DayNight">
+    <item name="colorPrimary">@android:color/holo_blue_light</item>
+        <item name="colorOnPrimary">@android:color/black</item>
+        <item name="colorSecondary">@android:color/holo_orange_dark</item>
+    </style>
+</resources>
