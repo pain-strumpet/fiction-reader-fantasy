@@ -42,7 +42,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val config = PurchasesConfiguration.Builder(applicationContext, Config.REVENUECAT_PUBLIC_API_KEY).build()
+        val config =
+            PurchasesConfiguration.Builder(applicationContext, Config.REVENUECAT_PUBLIC_API_KEY)
+                .build()
         Purchases.configure(config)
         Purchases.sharedInstance.invalidateCustomerInfoCache() // Ensure clean state after reinstall
         Log.d(TAG, "RevenueCat configured")
@@ -62,7 +64,8 @@ class MainActivity : ComponentActivity() {
         LaunchedEffect(Unit) {
             try {
                 val customerInfo = fetchCustomerInfo()
-                val entitlement: EntitlementInfo? = customerInfo.entitlements.all[Config.ENTITLEMENT_ID]
+                val entitlement: EntitlementInfo? =
+                    customerInfo.entitlements.all[Config.ENTITLEMENT_ID]
                 isSubscribed = entitlement?.isActive == true
             } catch (e: Exception) {
                 Log.e(TAG, "Failed to fetch customer info", e)
@@ -92,10 +95,15 @@ class MainActivity : ComponentActivity() {
                                 if (success) {
                                     try {
                                         val info = fetchCustomerInfo()
-                                        val entitlement = info.entitlements.all[Config.ENTITLEMENT_ID]
+                                        val entitlement =
+                                            info.entitlements.all[Config.ENTITLEMENT_ID]
                                         isSubscribed = entitlement?.isActive == true
                                     } catch (e: Exception) {
-                                        Log.e(TAG, "Error refreshing customer info after purchase", e)
+                                        Log.e(
+                                            TAG,
+                                            "Error refreshing customer info after purchase",
+                                            e
+                                        )
                                     }
                                 }
                             }
@@ -184,6 +192,7 @@ class MainActivity : ComponentActivity() {
         onSubscribe: () -> Unit,
         onUnsubscribe: () -> Unit
     ) {
+        val context = LocalContext.current
         var targetColor by remember { mutableStateOf(Color(0xFF6200EE)) }
         val animatedColor by animateColorAsState(targetValue = targetColor)
 
@@ -226,6 +235,23 @@ class MainActivity : ComponentActivity() {
                         "Subscribe for $2.99/month"
                     }
                 )
+            }
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Button(
+                onClick = {
+                    // For now, just show a toast
+                    Toast.makeText(
+                        context,
+                        "Test button clicked! Firebase coming soon.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.secondary
+                )
+            ) {
+                Text("Add Test Story")
             }
         }
     }

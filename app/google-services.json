@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "186826928823",
+    "project_id": "fantasy-fiction-reader-f892f",
+    "storage_bucket": "fantasy-fiction-reader-f892f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186826928823:android:9ec2262802da4ecbcf9332",
+        "android_client_info": {
+          "package_name": "com.reader.fiction.fantasy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfH3vi4PIYB4iVzQofHg8iKDRolippvgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
