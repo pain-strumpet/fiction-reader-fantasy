@@ -15,7 +15,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.lifecycleScope
@@ -43,9 +42,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Initialize RevenueCat SDK
         val config = PurchasesConfiguration.Builder(applicationContext, Config.REVENUECAT_PUBLIC_API_KEY).build()
         Purchases.configure(config)
+        Purchases.sharedInstance.invalidateCustomerInfoCache() // Ensure clean state after reinstall
         Log.d(TAG, "RevenueCat configured")
 
         setContent {
@@ -58,14 +57,12 @@ class MainActivity : ComponentActivity() {
         var isSubscribed by remember { mutableStateOf(false) }
         var loading by remember { mutableStateOf(true) }
         val context = LocalContext.current
-        val lifecycleOwner = LocalLifecycleOwner.current
+        val lifecycleOwner = androidx.lifecycle.compose.LocalLifecycleOwner.current
 
-        // Check subscription status when the composable enters composition
         LaunchedEffect(Unit) {
             try {
                 val customerInfo = fetchCustomerInfo()
-                val entitlement: EntitlementInfo? =
-                    customerInfo.entitlements.all[Config.ENTITLEMENT_ID]
+                val entitlement: EntitlementInfo? = customerInfo.entitlements.all[Config.ENTITLEMENT_ID]
                 isSubscribed = entitlement?.isActive == true
             } catch (e: Exception) {
                 Log.e(TAG, "Failed to fetch customer info", e)
@@ -90,7 +87,6 @@ class MainActivity : ComponentActivity() {
                     SubscriptionScreen(
                         subscribed = isSubscribed,
                         onSubscribe = {
-                            // Launch purchase from lifecycle scope
                             lifecycleOwner.lifecycleScope.launch {
                                 val success = purchaseSubscription(context)
                                 if (success) {
@@ -117,9 +113,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    /**
-     * Wraps RevenueCat's getOfferingsWith callback into a suspend function.
-     */
     private suspend fun fetchOfferings(): Offerings = suspendCancellableCoroutine { cont ->
         Purchases.sharedInstance.getOfferingsWith(
             onError = { error ->
@@ -131,10 +124,8 @@ class MainActivity : ComponentActivity() {
         )
     }
 
-    /**
-     * Wraps RevenueCat's getCustomerInfoWith callback into a suspend function.
-     */
     private suspend fun fetchCustomerInfo(): CustomerInfo = suspendCancellableCoroutine { cont ->
+        // fallback logic if CacheFetchPolicy is not available
         Purchases.sharedInstance.getCustomerInfoWith(
             onError = { error ->
                 cont.resumeWithException(Exception(error.message))
@@ -145,17 +136,8 @@ class MainActivity : ComponentActivity() {
         )
     }
 
-    /**
-     * Purchases the first available subscription product.
-     *
-     * Uses getOfferingsWith to retrieve products and purchaseWith to execute
-     * the purchase. When purchaseWith succeeds, it returns updated CustomerInfo
-     * via callback. This implementation resumes the coroutine with the
-     * entitlement's active state.
-     */
     private suspend fun purchaseSubscription(context: Context): Boolean {
         return try {
-            // Fetch the current offering and select the first available product
             val offerings = fetchOfferings()
             val product: StoreProduct = offerings.current
                 ?.availablePackages
@@ -166,8 +148,7 @@ class MainActivity : ComponentActivity() {
             val activity = context.findActivity()
                 ?: throw IllegalStateException("No Activity found")
 
-            // Wrap purchaseWith callback into a suspend coroutine
-            suspendCancellableCoroutine<Boolean> { cont ->
+            suspendCancellableCoroutine { cont ->
                 val params = PurchaseParams.Builder(activity, product).build()
                 Purchases.sharedInstance.purchaseWith(
                     purchaseParams = params,
@@ -180,7 +161,6 @@ class MainActivity : ComponentActivity() {
                         cont.resume(false)
                     },
                     onSuccess = { _, customerInfo ->
-                        // Check entitlement status from the returned CustomerInfo
                         val entitlement = customerInfo.entitlements.all[Config.ENTITLEMENT_ID]
                         cont.resume(entitlement?.isActive == true)
                     }
@@ -192,20 +172,12 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    /**
-     * Traverses the context chain to find an Activity for purchases.
-     */
     private tailrec fun Context.findActivity(): ComponentActivity? = when (this) {
         is ComponentActivity -> this
         is ContextWrapper -> baseContext.findActivity()
         else -> null
     }
 
-    /**
-     * Displays the subscription state with a button that either subscribes
-     * or unsubscribes the user. The button color animates between green
-     * and red when toggled.
-     */
     @Composable
     fun SubscriptionScreen(
         subscribed: Boolean,
@@ -213,7 +185,6 @@ class MainActivity : ComponentActivity() {
         onUnsubscribe: () -> Unit
     ) {
         var targetColor by remember { mutableStateOf(Color(0xFF6200EE)) }
-        // Do not pass deprecated label parameter
         val animatedColor by animateColorAsState(targetValue = targetColor)
 
         Column(

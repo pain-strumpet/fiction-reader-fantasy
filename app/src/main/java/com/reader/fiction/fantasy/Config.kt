@@ -26,7 +26,7 @@ object Config {
      * The subscription product identifier you create in Google Play Console.
      * It should follow your own naming conventions (e.g. "fictionreader_sub").
      */
-    const val PRODUCT_ID: String = "fictionreader_sub"
+    const val PRODUCT_ID: String = "fantasyreader_noads_v1"
 
     /**
      * The base plan identifier associated with your subscription product in
@@ -34,5 +34,5 @@ object Config {
      * at least one base plan (e.g. "basic-monthly").  Customers actually
      * purchase base plans, not the subscription object itself.
      */
-    const val BASE_PLAN_ID: String = "basic-monthly"
+    const val BASE_PLAN_ID: String = "monthly-autorenewing"
 }
