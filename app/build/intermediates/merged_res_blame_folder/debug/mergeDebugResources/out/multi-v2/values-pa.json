@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.reader.fiction.fantasy.app-mergeDebugResources-62:/values-pa/values-pa.xml",
+            "outputFile": "com.reader.fiction.fantasy.app-mergeDebugResources-66:/values-pa/values-pa.xml",
             "map": [
                 {
                     "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\acf95f18a8888ad85db00361b09dd0b0\\transformed\\jetified-play-services-base-18.5.0\\res\\values-pa\\values.xml",

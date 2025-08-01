@@ -32,6 +32,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
+import com.google.firebase.Firebase
+import com.google.firebase.FirebaseApp
+import com.google.firebase.firestore.firestore
+import com.google.firebase.FirebaseOptions
 
 class MainActivity : ComponentActivity() {
 
@@ -41,6 +45,14 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+// Initialize Firebase manually with options
+        val options = FirebaseOptions.Builder()
+            .setProjectId("fantasy-fiction-reader-f892f")
+            .setApplicationId("1:186826928823:android:9ec2262802da4ecbcf9332")
+            .setApiKey("AIzaSyAfH3vi4PIYB4iVzQofHg8iKDRolippvgs")
+            .build()
+
+        FirebaseApp.initializeApp(this, options)
 
         val config =
             PurchasesConfiguration.Builder(applicationContext, Config.REVENUECAT_PUBLIC_API_KEY)
@@ -240,12 +252,29 @@ class MainActivity : ComponentActivity() {
 
             Button(
                 onClick = {
-                    // For now, just show a toast
-                    Toast.makeText(
-                        context,
-                        "Test button clicked! Firebase coming soon.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    val db = Firebase.firestore
+                    val story = hashMapOf(
+                        "title" to "Test Story",
+                        "content" to "Once upon a time...",
+                        "timestamp" to System.currentTimeMillis()
+                    )
+
+                    db.collection("stories")
+                        .add(story)
+                        .addOnSuccessListener {
+                            Toast.makeText(
+                                context,
+                                "Story added to Firestore!",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        .addOnFailureListener { e ->
+                            Toast.makeText(
+                                context,
+                                "Error: ${e.message}",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                 },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.secondary
