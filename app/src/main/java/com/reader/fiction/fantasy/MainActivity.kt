@@ -8,9 +8,28 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.animateColorAsState
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -18,6 +37,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.lifecycleScope
+import com.google.firebase.Firebase
+import com.google.firebase.FirebaseApp
+import com.google.firebase.FirebaseOptions
+import com.google.firebase.firestore.firestore
 import com.revenuecat.purchases.CustomerInfo
 import com.revenuecat.purchases.EntitlementInfo
 import com.revenuecat.purchases.Offerings
@@ -32,10 +55,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
-import com.google.firebase.Firebase
-import com.google.firebase.FirebaseApp
-import com.google.firebase.firestore.firestore
-import com.google.firebase.FirebaseOptions
 
 class MainActivity : ComponentActivity() {
 
@@ -208,6 +227,24 @@ class MainActivity : ComponentActivity() {
         var targetColor by remember { mutableStateOf(Color(0xFF6200EE)) }
         val animatedColor by animateColorAsState(targetValue = targetColor)
 
+        val db = Firebase.firestore
+        val today = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US)
+            .format(java.util.Date())
+
+        // Query for today's stories
+        val stories = remember { mutableStateOf<List<Map<String, Any>>>(emptyList()) }
+
+        LaunchedEffect(Unit) {
+            db.collection("stories")
+                .whereEqualTo("publishDate", today)
+                .get()
+                .addOnSuccessListener { documents ->
+                    val sortedStories = documents.map { it.data }
+                        .sortedBy { (it["dayIndex"] as? Long)?.toInt() ?: 0 }
+                    stories.value = sortedStories
+                }
+        }
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -225,6 +262,61 @@ class MainActivity : ComponentActivity() {
                 textAlign = TextAlign.Center
             )
             Spacer(modifier = Modifier.height(24.dp))
+            // Story list
+            stories.value.forEach { story ->
+                val index = (story["dayIndex"] as? Long)?.toInt() ?: 0
+                val title = story["title"] as? String ?: "Untitled"
+
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 4.dp),
+                    onClick = {
+                        when (index) {
+                            0 -> {
+                                // Free story - show it
+                                Toast.makeText(context, "Free story: $title", Toast.LENGTH_SHORT).show()
+                            }
+                            in 1..3 -> {
+                                // Ad-gated story
+                                Toast.makeText(context, "Watch ad to unlock: $title", Toast.LENGTH_SHORT).show()
+                            }
+                            4 -> {
+                                if (subscribed) {
+                                    Toast.makeText(context, "Premium story: $title", Toast.LENGTH_SHORT).show()
+                                } else {
+                                    Toast.makeText(context, "Subscribe to read: $title", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                        }
+                    }
+                ) {
+                    Row(
+                        modifier = Modifier.padding(16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = "${index + 1}. $title",
+                            modifier = Modifier.weight(1f)
+                        )
+                        Text(
+                            text = when {
+                                index == 0 -> "FREE"
+                                index in 1..3 -> "🎬 AD"
+                                index == 4 && subscribed -> "PREMIUM"
+                                else -> "🔒 PRO"
+                            },
+                            color = when {
+                                index == 0 -> Color.Green
+                                subscribed -> Color.Blue
+                                else -> Color.Gray
+                            }
+                        )
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
             Button(
                 onClick = {
                     targetColor = if (subscribed) {
@@ -253,34 +345,86 @@ class MainActivity : ComponentActivity() {
             Button(
                 onClick = {
                     val db = Firebase.firestore
-                    val story = hashMapOf(
-                        "title" to "Test Story",
-                        "content" to "Once upon a time...",
-                        "timestamp" to System.currentTimeMillis()
-                    )
+                    val today = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US)
+                        .format(java.util.Date())
 
-                    db.collection("stories")
-                        .add(story)
-                        .addOnSuccessListener {
-                            Toast.makeText(
-                                context,
-                                "Story added to Firestore!",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                        .addOnFailureListener { e ->
-                            Toast.makeText(
-                                context,
-                                "Error: ${e.message}",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
+                    // Create 5 stories for today
+                    for (i in 0..4) {
+                        val story = hashMapOf(
+                            "title" to when(i) {
+                                0 -> "The Dragon's Dawn (Free)"
+                                1 -> "Wizard's Quest"
+                                2 -> "Knights of Tomorrow"
+                                3 -> "Magic Kingdom"
+                                else -> "Premium Epic"
+                            },
+                            "content" to "Story $i content...",
+                            "publishDate" to today,
+                            "dayIndex" to i.toLong()
+                        )
+
+                        db.collection("stories")
+                            .add(story)
+                            .addOnSuccessListener {
+                                if (i == 4) {
+                                    Toast.makeText(
+                                        context,
+                                        "Added 5 stories for today!",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                            }
+                    }
                 },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.secondary
                 )
             ) {
-                Text("Add Test Story")
+                Text("Add 5 Daily Stories")
+            }
+            Spacer(modifier = Modifier.height(16.dp))
+            Button(
+                onClick = {
+                    // Force refresh the query
+                    db.collection("stories")
+                        .get()
+                        .addOnSuccessListener { documents ->
+                            Toast.makeText(
+                                context,
+                                "Found ${documents.size()} total stories",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                            // Also check today's stories
+                            db.collection("stories")
+                                .whereEqualTo("publishDate", today)
+                                .get()
+                                .addOnSuccessListener {
+                                    if (i == 4) {
+                                        Toast.makeText(
+                                            context,
+                                            "Added 5 stories for today!",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+
+                                        // Refresh the stories list
+                                        db.collection("stories")
+                                            .whereEqualTo("publishDate", today)
+                                            .get()
+                                            .addOnSuccessListener { documents ->
+                                                val sortedStories = documents.map { it.data }
+                                                    .sortedBy { (it["dayIndex"] as? Long)?.toInt() ?: 0 }
+                                                stories.value = sortedStories
+                                            }
+                                    }
+                                }
+                        }
+                },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color.Red
+                )
+            ) {
+                Text("Debug: Check Stories")
             }
         }
     }
