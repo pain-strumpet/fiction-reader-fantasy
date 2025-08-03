@@ -55,6 +55,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
 
@@ -64,7 +67,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-// Initialize Firebase manually with options
+        // Initialize Firebase manually with options
         val options = FirebaseOptions.Builder()
             .setProjectId("fantasy-fiction-reader-f892f")
             .setApplicationId("1:186826928823:android:9ec2262802da4ecbcf9332")
@@ -227,6 +230,18 @@ class MainActivity : ComponentActivity() {
         var targetColor by remember { mutableStateOf(Color(0xFF6200EE)) }
         val animatedColor by animateColorAsState(targetValue = targetColor)
 
+        // Add navigation state
+        var selectedStory by remember { mutableStateOf<Map<String, Any>?>(null) }
+
+        // Show story reader if a story is selected
+        if (selectedStory != null) {
+            StoryReaderScreen(
+                story = selectedStory!!,
+                onBack = { selectedStory = null }
+            )
+            return
+        }
+
         val db = Firebase.firestore
         val today = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US)
             .format(java.util.Date())
@@ -262,61 +277,85 @@ class MainActivity : ComponentActivity() {
                 textAlign = TextAlign.Center
             )
             Spacer(modifier = Modifier.height(24.dp))
-            // Story list
-            stories.value.forEach { story ->
-                val index = (story["dayIndex"] as? Long)?.toInt() ?: 0
-                val title = story["title"] as? String ?: "Untitled"
 
-                Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 4.dp),
-                    onClick = {
-                        when (index) {
-                            0 -> {
-                                // Free story - show it
-                                Toast.makeText(context, "Free story: $title", Toast.LENGTH_SHORT).show()
-                            }
-                            in 1..3 -> {
-                                // Ad-gated story
-                                Toast.makeText(context, "Watch ad to unlock: $title", Toast.LENGTH_SHORT).show()
-                            }
-                            4 -> {
-                                if (subscribed) {
-                                    Toast.makeText(context, "Premium story: $title", Toast.LENGTH_SHORT).show()
-                                } else {
-                                    Toast.makeText(context, "Subscribe to read: $title", Toast.LENGTH_SHORT).show()
+            // Story list - make it scrollable
+            Box(
+                modifier = Modifier
+                    .weight(1f) // Takes available space
+                    .fillMaxWidth()
+            ) {
+                Column(
+                    modifier = Modifier.verticalScroll(rememberScrollState())
+                ) {
+                    stories.value.forEach { story ->
+                        val index = (story["dayIndex"] as? Long)?.toInt() ?: 0
+                        val title = story["title"] as? String ?: "Untitled"
+
+                        Card(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 4.dp),
+                            onClick = {
+                                when (index) {
+                                    0 -> {
+                                        // Free story - show it immediately
+                                        selectedStory = story
+                                    }
+                                    in 1..3 -> {
+                                        // Ad-gated story
+                                        Toast.makeText(
+                                            context,
+                                            "Ad would show here, then story opens",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                        // For now, just show the story after toast
+                                        selectedStory = story
+                                    }
+                                    4 -> {
+                                        if (subscribed) {
+                                            // Premium story - subscriber can read
+                                            selectedStory = story
+                                        } else {
+                                            // Show subscribe prompt
+                                            Toast.makeText(
+                                                context,
+                                                "Subscribe to read premium stories!",
+                                                Toast.LENGTH_LONG
+                                            ).show()
+                                        }
+                                    }
                                 }
                             }
-                        }
-                    }
-                ) {
-                    Row(
-                        modifier = Modifier.padding(16.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Text(
-                            text = "${index + 1}. $title",
-                            modifier = Modifier.weight(1f)
-                        )
-                        Text(
-                            text = when {
-                                index == 0 -> "FREE"
-                                index in 1..3 -> "🎬 AD"
-                                index == 4 && subscribed -> "PREMIUM"
-                                else -> "🔒 PRO"
-                            },
-                            color = when {
-                                index == 0 -> Color.Green
-                                subscribed -> Color.Blue
-                                else -> Color.Gray
+                        ) {
+                            Row(
+                                modifier = Modifier.padding(16.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Text(
+                                    text = "${index + 1}. $title",
+                                    modifier = Modifier.weight(1f)
+                                )
+                                Text(
+                                    text = when {
+                                        index == 0 -> "FREE"
+                                        index in 1..3 -> "🎬 AD"
+                                        index == 4 && subscribed -> "PREMIUM"
+                                        else -> "🔒 PRO"
+                                    },
+                                    color = when {
+                                        index == 0 -> Color.Green
+                                        subscribed -> Color.Blue
+                                        else -> Color.Gray
+                                    }
+                                )
                             }
-                        )
+                        }
                     }
                 }
             }
 
             Spacer(modifier = Modifier.height(16.dp))
+
             Button(
                 onClick = {
                     targetColor = if (subscribed) {
@@ -340,6 +379,7 @@ class MainActivity : ComponentActivity() {
                     }
                 )
             }
+
             Spacer(modifier = Modifier.height(16.dp))
 
             Button(
@@ -358,7 +398,23 @@ class MainActivity : ComponentActivity() {
                                 3 -> "Magic Kingdom"
                                 else -> "Premium Epic"
                             },
-                            "content" to "Story $i content...",
+                            "content" to when(i) {
+                                0 -> """
+The dragon stirred in the early morning mist, its scales catching the first rays of sunlight. 
+
+For a thousand years, it had slumbered beneath the mountain, waiting for this moment. The prophecy spoke of a dawn when the world would need its ancient wisdom once more.
+
+As the creature unfurled its massive wings, villagers in the valley below gasped in awe. This was not the fearsome beast of legend, but a majestic guardian, eyes filled with timeless knowledge.
+
+"Fear not," the dragon's voice rumbled like distant thunder, "I have awakened not to destroy, but to guide you through the darkness that approaches."
+
+And so began the most extraordinary chapter in the kingdom's history...
+                                """.trimIndent()
+                                1 -> "The wizard's tower stood at the edge of reality, where magic met the mundane world..."
+                                2 -> "In the year 2157, the last knights of Earth prepared for their greatest battle..."
+                                3 -> "The magic kingdom appeared only once every hundred years, and today was that day..."
+                                else -> "This premium story contains the secrets of the universe itself..."
+                            },
                             "publishDate" to today,
                             "dayIndex" to i.toLong()
                         )
@@ -382,7 +438,9 @@ class MainActivity : ComponentActivity() {
             ) {
                 Text("Add 5 Daily Stories")
             }
+
             Spacer(modifier = Modifier.height(16.dp))
+
             Button(
                 onClick = {
                     // Force refresh the query
@@ -399,24 +457,12 @@ class MainActivity : ComponentActivity() {
                             db.collection("stories")
                                 .whereEqualTo("publishDate", today)
                                 .get()
-                                .addOnSuccessListener {
-                                    if (i == 4) {
-                                        Toast.makeText(
-                                            context,
-                                            "Added 5 stories for today!",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-
-                                        // Refresh the stories list
-                                        db.collection("stories")
-                                            .whereEqualTo("publishDate", today)
-                                            .get()
-                                            .addOnSuccessListener { documents ->
-                                                val sortedStories = documents.map { it.data }
-                                                    .sortedBy { (it["dayIndex"] as? Long)?.toInt() ?: 0 }
-                                                stories.value = sortedStories
-                                            }
-                                    }
+                                .addOnSuccessListener { todayDocs ->
+                                    Toast.makeText(
+                                        context,
+                                        "Found ${todayDocs.size()} stories for today ($today)",
+                                        Toast.LENGTH_LONG
+                                    ).show()
                                 }
                         }
                 },
@@ -425,6 +471,49 @@ class MainActivity : ComponentActivity() {
                 )
             ) {
                 Text("Debug: Check Stories")
+            }
+        }
+    }
+
+    @Composable
+    fun StoryReaderScreen(
+        story: Map<String, Any>,
+        onBack: () -> Unit
+    ) {
+        val title = story["title"] as? String ?: "Untitled"
+        val content = story["content"] as? String ?: "No content available."
+
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp)
+        ) {
+            // Back button
+            Button(
+                onClick = onBack,
+                modifier = Modifier.padding(bottom = 16.dp)
+            ) {
+                Text("← Back to Stories")
+            }
+
+            // Title
+            Text(
+                text = title,
+                style = MaterialTheme.typography.headlineMedium,
+                modifier = Modifier.padding(bottom = 16.dp)
+            )
+
+            // Scrollable content
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState())
+            ) {
+                Text(
+                    text = content,
+                    style = MaterialTheme.typography.bodyLarge,
+                    lineHeight = 28.sp
+                )
             }
         }
     }
