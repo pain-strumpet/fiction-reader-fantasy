@@ -31,6 +31,8 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Төмөнкү менен бөлүшүү"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"<ns1:g id="APPLICATION_NAME">%s</ns1:g> аркылуу бөлүшүү"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Жыйыштыруу"</string>
+    <string msgid="8397015543330865059" name="android.credentials.TYPE_PASSWORD_CREDENTIAL">"Сырсөз"</string>
+    <string msgid="3929015085059320822" name="androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL">"Киргизүүчү ачкыч"</string>
     <string msgid="389117264260014992" name="autofill">"Автотолтуруу функиясы"</string>
     <string name="bottomsheet_action_collapse">Ылдыйкы экранды жыйыштыруу</string>
     <string name="bottomsheet_action_expand">Ылдыйкы экранды жайып көрсөтүү</string>
@@ -67,12 +69,16 @@
     <string name="common_open_on_phone">Телефондо ачык</string>
     <string name="common_signin_button_text">Кирүү</string>
     <string name="common_signin_button_text_long">Google менен кирүү</string>
+    <string msgid="3260749812566568062" name="copy_toast_msg">"Шилтеме буферге көчүрүлдү"</string>
     <string msgid="8038256446254964252" name="default_error_message">"Киргизилген маалымат жараксыз"</string>
     <string msgid="6312721426453364202" name="default_popup_window_title">"Калкыма терезе"</string>
     <string msgid="1890207353314751437" name="dropdown_menu">"Түрүлмө меню"</string>
     <string name="error_a11y_label">Ката: жараксыз</string>
     <string name="error_icon_content_description">Ката</string>
     <string name="exposed_dropdown_menu_content_description">Түрүлмө менюну көрсөтүү</string>
+    <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"Шилтемени көчүрүү"</string>
+    <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"Серепчиден ачуу"</string>
+    <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Шилтемени бөлүшүү"</string>
     <string name="icon_content_description">Диалог сүрөтчөсү</string>
     <string msgid="6827826412747255547" name="in_progress">"Аткарылууда"</string>
     <string msgid="7933458017204019916" name="indeterminate">"Жарым-жартылай текшерилди"</string>

@@ -68,5 +68,6 @@ dependencies {
 
 // Use the main firestore artefact – it now contains the KTX extensions
     implementation "com.google.firebase:firebase-firestore"
+    implementation("com.google.firebase:firebase-auth:24.0.0")
 
 }

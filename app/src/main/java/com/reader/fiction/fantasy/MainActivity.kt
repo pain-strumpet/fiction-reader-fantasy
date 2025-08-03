@@ -58,11 +58,35 @@ import kotlin.coroutines.resumeWithException
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.unit.sp
+import com.google.firebase.auth.FirebaseAuth
+import kotlin.collections.toMutableMap
 
 class MainActivity : ComponentActivity() {
 
     companion object {
         private const val TAG = "MainActivity"
+
+        // Add this function inside the existing companion object
+        fun unlockStoryForUser(userId: String, storyId: String, unlockMethod: String) {
+            val db = Firebase.firestore
+            val userStoryRef = db.collection("users")
+                .document(userId)
+                .collection("unlockedStories")
+                .document(storyId)
+
+            val unlockData = hashMapOf(
+                "unlockedAt" to System.currentTimeMillis(),
+                "unlockMethod" to unlockMethod
+            )
+
+            userStoryRef.set(unlockData)
+                .addOnSuccessListener {
+                    Log.d(TAG, "Story $storyId unlocked for user via $unlockMethod")
+                }
+                .addOnFailureListener { e ->
+                    Log.e(TAG, "Failed to unlock story", e)
+                }
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,6 +99,18 @@ class MainActivity : ComponentActivity() {
             .build()
 
         FirebaseApp.initializeApp(this, options)
+
+        // Initialize Firebase Auth
+        val auth = FirebaseAuth.getInstance()
+        if (auth.currentUser == null) {
+            auth.signInAnonymously()
+                .addOnSuccessListener {
+                    Log.d(TAG, "Anonymous auth successful: ${auth.currentUser?.uid}")
+                }
+                .addOnFailureListener { e ->
+                    Log.e(TAG, "Anonymous auth failed", e)
+                }
+        }
 
         val config =
             PurchasesConfiguration.Builder(applicationContext, Config.REVENUECAT_PUBLIC_API_KEY)
@@ -94,6 +130,8 @@ class MainActivity : ComponentActivity() {
         var loading by remember { mutableStateOf(true) }
         val context = LocalContext.current
         val lifecycleOwner = androidx.lifecycle.compose.LocalLifecycleOwner.current
+        val auth = FirebaseAuth.getInstance()
+        val userId = auth.currentUser?.uid ?: ""
 
         LaunchedEffect(Unit) {
             try {
@@ -123,6 +161,7 @@ class MainActivity : ComponentActivity() {
                 } else {
                     SubscriptionScreen(
                         subscribed = isSubscribed,
+                        userId = userId,
                         onSubscribe = {
                             lifecycleOwner.lifecycleScope.launch {
                                 val success = purchaseSubscription(context)
@@ -223,6 +262,7 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun SubscriptionScreen(
         subscribed: Boolean,
+        userId: String,
         onSubscribe: () -> Unit,
         onUnsubscribe: () -> Unit
     ) {
@@ -254,8 +294,12 @@ class MainActivity : ComponentActivity() {
                 .whereEqualTo("publishDate", today)
                 .get()
                 .addOnSuccessListener { documents ->
-                    val sortedStories = documents.map { it.data }
-                        .sortedBy { (it["dayIndex"] as? Long)?.toInt() ?: 0 }
+                    val sortedStories = documents.map { doc ->
+                        // Capture the document ID
+                        doc.data.toMutableMap().apply {
+                            put("id", doc.id)
+                        }
+                    }.sortedBy { (it["dayIndex"] as? Long)?.toInt() ?: 0 }
                     stories.value = sortedStories
                 }
         }
@@ -296,27 +340,29 @@ class MainActivity : ComponentActivity() {
                                 .fillMaxWidth()
                                 .padding(vertical = 4.dp),
                             onClick = {
-                                when (index) {
-                                    0 -> {
-                                        // Free story - show it immediately
+                                when {
+                                    index == 0 -> {
+                                        // Free story - track and show
+                                        MainActivity.unlockStoryForUser(userId, story["id"] as? String ?: "", "free")
                                         selectedStory = story
                                     }
-                                    in 1..3 -> {
+                                    index in 1..3 -> {
                                         // Ad-gated story
                                         Toast.makeText(
                                             context,
                                             "Ad would show here, then story opens",
                                             Toast.LENGTH_SHORT
                                         ).show()
-                                        // For now, just show the story after toast
+                                        // Track after "watching ad"
+                                        MainActivity.unlockStoryForUser(userId, story["id"] as? String ?: "", "ad")
                                         selectedStory = story
                                     }
-                                    4 -> {
+                                    index == 4 -> {
                                         if (subscribed) {
-                                            // Premium story - subscriber can read
+                                            // Premium story - track and show
+                                            MainActivity.unlockStoryForUser(userId, story["id"] as? String ?: "", "subscription")
                                             selectedStory = story
                                         } else {
-                                            // Show subscribe prompt
                                             Toast.makeText(
                                                 context,
                                                 "Subscribe to read premium stories!",

@@ -31,6 +31,8 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Dela med"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Dela med <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Komprimera"</string>
+    <string msgid="8397015543330865059" name="android.credentials.TYPE_PASSWORD_CREDENTIAL">"Lösenord"</string>
+    <string msgid="3929015085059320822" name="androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL">"Nyckel"</string>
     <string msgid="389117264260014992" name="autofill">"Autofyll"</string>
     <string name="bottomsheet_action_collapse">Komprimera arket på nedre delen av skärmen</string>
     <string name="bottomsheet_action_expand">Utöka arket på nedre delen av skärmen</string>
@@ -67,12 +69,16 @@
     <string name="common_open_on_phone">Öppna på mobilen</string>
     <string name="common_signin_button_text">Logga in</string>
     <string name="common_signin_button_text_long">Logga in med Google</string>
+    <string msgid="3260749812566568062" name="copy_toast_msg">"Länk kopierad till Urklipp"</string>
     <string msgid="8038256446254964252" name="default_error_message">"Ogiltiga indata"</string>
     <string msgid="6312721426453364202" name="default_popup_window_title">"Popup-fönster"</string>
     <string msgid="1890207353314751437" name="dropdown_menu">"Rullgardinsmeny"</string>
     <string name="error_a11y_label">Fel: ogiltigt</string>
     <string name="error_icon_content_description">Fel</string>
     <string name="exposed_dropdown_menu_content_description">Visa rullgardinsmenyn</string>
+    <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"Kopiera länk"</string>
+    <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"Öppna i webbläsaren"</string>
+    <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Dela länk"</string>
     <string name="icon_content_description">Dialogikon</string>
     <string msgid="6827826412747255547" name="in_progress">"Pågår"</string>
     <string msgid="7933458017204019916" name="indeterminate">"Delvis markerad"</string>

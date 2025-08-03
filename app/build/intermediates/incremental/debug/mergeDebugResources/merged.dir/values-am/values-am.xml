@@ -31,6 +31,8 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"አጋራ በ"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"ለ<ns1:g id="APPLICATION_NAME">%s</ns1:g> አጋራ"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"ሰብስብ"</string>
+    <string msgid="8397015543330865059" name="android.credentials.TYPE_PASSWORD_CREDENTIAL">"የይለፍ ቃል"</string>
+    <string msgid="3929015085059320822" name="androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL">"የይለፍ ቁልፍ"</string>
     <string msgid="389117264260014992" name="autofill">"ራስ-ሙላ"</string>
     <string name="bottomsheet_action_collapse">የግርጌ ሉሁን ይሰብስቡ</string>
     <string name="bottomsheet_action_expand">የግርጌ ሉሁን ይዘርጉ</string>
@@ -67,12 +69,16 @@
     <string name="common_open_on_phone">ስልክ ላይ ክፈት</string>
     <string name="common_signin_button_text">ግባ</string>
     <string name="common_signin_button_text_long">በGoogle ይግቡ</string>
+    <string msgid="3260749812566568062" name="copy_toast_msg">"አገናኝ ወደ ቅንጥብ ሰሌዳ ተቀድቷል"</string>
     <string msgid="8038256446254964252" name="default_error_message">"ልክ ያልሆነ ግቤት"</string>
     <string msgid="6312721426453364202" name="default_popup_window_title">"ብቅ-ባይ መስኮት"</string>
     <string msgid="1890207353314751437" name="dropdown_menu">"ተቆልቋይ ምናሌ"</string>
     <string name="error_a11y_label">ስህተት፦ ልክ ያልሆነ</string>
     <string name="error_icon_content_description">ስህተት</string>
     <string name="exposed_dropdown_menu_content_description">ተቆልቋይ ምናሌን አሳይ</string>
+    <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"አገናኝ ቅዳ"</string>
+    <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"በአሳሽ ውስጥ ክፈት"</string>
+    <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"አገናኝ አጋራ"</string>
     <string name="icon_content_description">የንግግር አዶ</string>
     <string msgid="6827826412747255547" name="in_progress">"በሂደት ላይ"</string>
     <string msgid="7933458017204019916" name="indeterminate">"በከፊል የተፈተሸ"</string>
