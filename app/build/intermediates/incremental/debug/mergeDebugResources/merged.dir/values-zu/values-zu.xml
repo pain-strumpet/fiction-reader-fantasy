@@ -199,11 +199,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">Thepha ukuze ushintshele ekubukeni konyaka</string>
     <string name="mtrl_timepicker_cancel">Khansela</string>
     <string name="mtrl_timepicker_confirm">KULUNGILE</string>
+    <string name="native_body">Umzimba</string>
+    <string name="native_headline">Isihlokwana</string>
+    <string name="native_media_view">Ukubukwa kwemidiya</string>
     <string msgid="542007171693138492" name="navigation_menu">"Imenyu yokuzulazula"</string>
     <string msgid="6610465462668679431" name="not_selected">"Ayikhethiwe"</string>
+    <string name="notifications_permission_confirm">Vumela</string>
+    <string name="notifications_permission_decline">Ungavumeli</string>
+    <string name="notifications_permission_title">Vumela i-app ukuthi ikuthumelele izaziso?</string>
+    <string name="offline_dialog_image_description">Isithonjana</string>
+    <string name="offline_dialog_text">Siyabonga ngentshisekelo yakho.\nSizokwabelana okwengeziwe uma usubuyile ku-inthanethi.</string>
+    <string name="offline_notification_title">Usubuyile ku-inthanethi! Ake siqhubeke lapho sigcine khona</string>
+    <string name="offline_notification_title_with_advertiser">Usubuyile ku-inthanethi! Qhubeka ufunde mayelana nokuthi %s</string>
+    <string name="offline_opt_in_confirm">KULUNGILE</string>
+    <string name="offline_opt_in_decline">Cha ngiyabonga</string>
+    <string name="offline_opt_in_message">Sizokuthumela isaziso esinesixhumanisi sesayithi yomkhangisi.</string>
+    <string name="offline_opt_in_title">Vula isikhangiso lapho usuku-inthanethi.</string>
     <string name="password_toggle_content_description">Bonisa iphasiwedi</string>
     <string msgid="5941395253238309765" name="range_end">"Umkhawulo wobubanzi"</string>
     <string msgid="7097486360902471446" name="range_start">"Ukuqala kobubanzi"</string>
+    <string name="s1">Londoloza isithombe</string>
+    <string name="s2">Vumela isikhangiso ukugcina isithombe kwigalari yesithombe?</string>
+    <string name="s3">Yamukela</string>
+    <string name="s4">Yenqaba</string>
+    <string name="s5">Dala umcimbi wekhalenda</string>
+    <string name="s6">Vumela Isikhangiso ukudala umcimbi wekhalenda?</string>
+    <string name="s7">Hlola isikhangiso</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Sesha"</string>
     <string name="searchview_clear_text_content_description">Sula umbhalo</string>
     <string name="searchview_navigation_content_description">Emuva</string>
@@ -219,4 +240,5 @@
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> amaphesenti."</string>
     <string msgid="3765533235322692011" name="tooltip_description">"ithulithiphu"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"bonisa ithulithiphu"</string>
+    <string name="watermark_label_prefix">I-AdMob - </string>
 </resources>

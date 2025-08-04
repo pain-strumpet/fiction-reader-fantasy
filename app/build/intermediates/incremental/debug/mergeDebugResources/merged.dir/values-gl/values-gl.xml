@@ -199,11 +199,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">Tocar para cambiar á vista de ano</string>
     <string name="mtrl_timepicker_cancel">Cancelar</string>
     <string name="mtrl_timepicker_confirm">Aceptar</string>
+    <string name="native_body">Corpo</string>
+    <string name="native_headline">Título</string>
+    <string name="native_media_view">Controis multimedia</string>
     <string msgid="542007171693138492" name="navigation_menu">"Menú de navegación"</string>
     <string msgid="6610465462668679431" name="not_selected">"Non seleccionado"</string>
+    <string name="notifications_permission_confirm">Permitir</string>
+    <string name="notifications_permission_decline">Non permitir</string>
+    <string name="notifications_permission_title">Queres permitir que a aplicación che envíe notificacións?</string>
+    <string name="offline_dialog_image_description">Icona</string>
+    <string name="offline_dialog_text">Grazas polo teu interese.\nDarémosche máis información cando volvas estar en liña.</string>
+    <string name="offline_notification_title">Volves estar en liña. Continúa desde o punto onde o deixaches</string>
+    <string name="offline_notification_title_with_advertiser">Volves estar en liña. Continúa informándote sobre %s</string>
+    <string name="offline_opt_in_confirm">Si</string>
+    <string name="offline_opt_in_decline">Non</string>
+    <string name="offline_opt_in_message">Enviarémosche unha notificación cunha ligazón ao sitio do anunciante.</string>
+    <string name="offline_opt_in_title">Abrir o anuncio cando volvas estar en liña.</string>
     <string name="password_toggle_content_description">Mostra o contrasinal</string>
     <string msgid="5941395253238309765" name="range_end">"Fin do intervalo"</string>
     <string msgid="7097486360902471446" name="range_start">"Inicio do intervalo"</string>
+    <string name="s1">Gardar imaxe</string>
+    <string name="s2">Queres permitir que o anuncio almacene imaxes na galería de imaxes?</string>
+    <string name="s3">Aceptar</string>
+    <string name="s4">Rexeitar</string>
+    <string name="s5">Crear evento do calendario</string>
+    <string name="s6">Queres permitir que o anuncio cree un evento do calendario?</string>
+    <string name="s7">Probar anuncio</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Buscar"</string>
     <string name="searchview_clear_text_content_description">Borrar texto</string>
     <string name="searchview_navigation_content_description">Anterior</string>
@@ -219,4 +240,5 @@
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> por cento."</string>
     <string msgid="3765533235322692011" name="tooltip_description">"cadro de información"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"mostrar cadro de información"</string>
+    <string name="watermark_label_prefix">AdMob: </string>
 </resources>

@@ -201,11 +201,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">Dotaknite se za preklop na pogled leta</string>
     <string name="mtrl_timepicker_cancel">Prekliči</string>
     <string name="mtrl_timepicker_confirm">V redu</string>
+    <string name="native_body">Telo</string>
+    <string name="native_headline">Naslov</string>
+    <string name="native_media_view">Ogled predstavnosti</string>
     <string msgid="542007171693138492" name="navigation_menu">"Meni za krmarjenje"</string>
     <string msgid="6610465462668679431" name="not_selected">"Ni izbrano"</string>
+    <string name="notifications_permission_confirm">Dovoli</string>
+    <string name="notifications_permission_decline">Ne dovoli</string>
+    <string name="notifications_permission_title">Želite aplikaciji dovoliti, da vam pošilja obvestila?</string>
+    <string name="offline_dialog_image_description">Ikona</string>
+    <string name="offline_dialog_text">Zahvaljujemo se vam za zanimanje.\nVeč boste izvedeli, ko bo povezava znova vzpostavljena.</string>
+    <string name="offline_notification_title">Povezava je znova vzpostavljena. Nadaljujmo, kjer smo končali</string>
+    <string name="offline_notification_title_with_advertiser">Povezava je znova vzpostavljena. Nadaljujte s pridobivanjem informacij o oglaševalcu %s</string>
+    <string name="offline_opt_in_confirm">V redu</string>
+    <string name="offline_opt_in_decline">Ne, hvala</string>
+    <string name="offline_opt_in_message">Poslali vam bomo obvestilo s povezavo na spletno mesto oglaševalca.</string>
+    <string name="offline_opt_in_title">Odprite oglas, ko bo povezava znova vzpostavljena.</string>
     <string name="password_toggle_content_description">Prikaz gesla</string>
     <string msgid="5941395253238309765" name="range_end">"Konec razpona"</string>
     <string msgid="7097486360902471446" name="range_start">"Začetek razpona"</string>
+    <string name="s1">Shranjevanje slike</string>
+    <string name="s2">Ali dovolite, da oglas shrani sliko v galerijo slik?</string>
+    <string name="s3">Sprejmi</string>
+    <string name="s4">Zavrni</string>
+    <string name="s5">Ustvarjanje koledarskega dogodka</string>
+    <string name="s6">Ali dovolite, da oglas ustvari koledarski dogodek?</string>
+    <string name="s7">Preizkusni oglas</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Iskanje"</string>
     <string name="searchview_clear_text_content_description">Počisti besedilo</string>
     <string name="searchview_navigation_content_description">Nazaj</string>
@@ -221,4 +242,5 @@
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> odstotkov"</string>
     <string msgid="3765533235322692011" name="tooltip_description">"opis orodja"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"pokaži opis orodja"</string>
+    <string name="watermark_label_prefix">AdMob – </string>
 </resources>

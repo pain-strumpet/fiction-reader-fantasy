@@ -199,11 +199,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">Toca per canviar a la visualització d\'any</string>
     <string name="mtrl_timepicker_cancel">Cancel·la</string>
     <string name="mtrl_timepicker_confirm">D’acord</string>
+    <string name="native_body">Cos</string>
+    <string name="native_headline">Títol</string>
+    <string name="native_media_view">Visualització del contingut multimèdia</string>
     <string msgid="542007171693138492" name="navigation_menu">"Menú de navegació"</string>
     <string msgid="6610465462668679431" name="not_selected">"No seleccionat"</string>
+    <string name="notifications_permission_confirm">Permet</string>
+    <string name="notifications_permission_decline">No permetis</string>
+    <string name="notifications_permission_title">Vols permetre que l\'aplicació t\'enviï notificacions?</string>
+    <string name="offline_dialog_image_description">Icona</string>
+    <string name="offline_dialog_text">Gràcies pel teu interès.\nEt proporcionarem més informació quan tornis a estar en línia.</string>
+    <string name="offline_notification_title">Tornes a estar en línia. Continua a partir del punt on ho has deixat.</string>
+    <string name="offline_notification_title_with_advertiser">Tornes a estar en línia. Descobreix més sobre %s.</string>
+    <string name="offline_opt_in_confirm">D\'acord</string>
+    <string name="offline_opt_in_decline">No, gràcies</string>
+    <string name="offline_opt_in_message">T\'enviarem una notificació amb un enllaç al lloc web de l\'anunciant.</string>
+    <string name="offline_opt_in_title">Obre l\'anunci quan tornis a tenir connexió.</string>
     <string name="password_toggle_content_description">Mostra la contrasenya</string>
     <string msgid="5941395253238309765" name="range_end">"Fi de l\'interval"</string>
     <string msgid="7097486360902471446" name="range_start">"Inici de l\'interval"</string>
+    <string name="s1">Desa la imatge</string>
+    <string name="s2">Vols permetre que l\'anunci desi imatges a la galeria d\'imatges?</string>
+    <string name="s3">Accepta</string>
+    <string name="s4">Rebutja</string>
+    <string name="s5">Crea un esdeveniment de calendari</string>
+    <string name="s6">Vols permetre que l\'anunci creï un esdeveniment de calendari?</string>
+    <string name="s7">Anunci de prova</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Cerca"</string>
     <string name="searchview_clear_text_content_description">Esborra el text</string>
     <string name="searchview_navigation_content_description">Enrere</string>
@@ -219,4 +240,5 @@
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> per cent"</string>
     <string msgid="3765533235322692011" name="tooltip_description">"descripció emergent"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"mostra la descripció emergent"</string>
+    <string name="watermark_label_prefix">AdMob - </string>
 </resources>

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.reader.fiction.fantasy.app-mergeDebugResources-71:/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "com.reader.fiction.fantasy.app-mergeDebugResources-78:/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
                     "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\26810629c1a0a6f21170423a9767c3d6\\transformed\\core-1.16.0\\res\\values-en-rXC\\values-en-rXC.xml",
@@ -18,23 +18,6 @@
                         "startOffsets": "5959,6155,6360,6561,6762,6969,7174,23456",
                         "endColumns": "195,204,200,200,206,204,211,203",
                         "endOffsets": "6150,6355,6556,6757,6964,7169,7381,23655"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\b739ffc937e1d85363de5059c49ae861\\transformed\\browser-1.4.0\\res\\values-en-rXC\\values-en-rXC.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,255,454,665",
-                        "endColumns": "199,198,210,201",
-                        "endOffsets": "250,449,660,862"
-                    },
-                    "to": {
-                        "startLines": "40,44,45,46",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "7762,8548,8747,8958",
-                        "endColumns": "199,198,210,201",
-                        "endOffsets": "7957,8742,8953,9155"
                     }
                 },
                 {
@@ -137,6 +120,23 @@
                         "startOffsets": "7386,7577,7962,8159,8361,9160,9345,21653,21841,22028,22209,22580,22746,22932,23110,23285,23660,23839,24006",
                         "endColumns": "190,184,196,201,186,184,192,187,186,180,184,165,185,177,174,170,178,166,237",
                         "endOffsets": "7572,7757,8154,8356,8543,9340,9533,21836,22023,22204,22389,22741,22927,23105,23280,23451,23834,24001,24239"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\86a2bac962006b0a8ffd0fe0459ba735\\transformed\\browser-1.8.0\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,255,454,665",
+                        "endColumns": "199,198,210,201",
+                        "endOffsets": "250,449,660,862"
+                    },
+                    "to": {
+                        "startLines": "40,44,45,46",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "7762,8548,8747,8958",
+                        "endColumns": "199,198,210,201",
+                        "endOffsets": "7957,8742,8953,9155"
                     }
                 }
             ]

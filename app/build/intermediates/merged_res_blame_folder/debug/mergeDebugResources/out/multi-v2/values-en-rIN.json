@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.reader.fiction.fantasy.app-mergeDebugResources-71:/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "com.reader.fiction.fantasy.app-mergeDebugResources-78:/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\ded296a9536f0b038f03d7db47a711c8\\transformed\\jetified-ui-release\\res\\values-en-rIN\\values-en-rIN.xml",
@@ -89,7 +89,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\b739ffc937e1d85363de5059c49ae861\\transformed\\browser-1.4.0\\res\\values-en-rIN\\values-en-rIN.xml",
+                    "source": "C:\\Users\\cherr\\.gradle\\caches\\9.0-milestone-1\\transforms\\86a2bac962006b0a8ffd0fe0459ba735\\transformed\\browser-1.8.0\\res\\values-en-rIN\\values-en-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

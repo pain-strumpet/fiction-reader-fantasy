@@ -199,11 +199,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">แตะเพื่อเปลี่ยนเป็นมุมมองปี</string>
     <string name="mtrl_timepicker_cancel">ยกเลิก</string>
     <string name="mtrl_timepicker_confirm">ตกลง</string>
+    <string name="native_body">เนื้อความ</string>
+    <string name="native_headline">บรรทัดแรก</string>
+    <string name="native_media_view">มุมมองสื่อ</string>
     <string msgid="542007171693138492" name="navigation_menu">"เมนูการนำทาง"</string>
     <string msgid="6610465462668679431" name="not_selected">"ไม่ได้เลือก"</string>
+    <string name="notifications_permission_confirm">อนุญาต</string>
+    <string name="notifications_permission_decline">ไม่อนุญาต</string>
+    <string name="notifications_permission_title">อนุญาตให้แอปส่งการแจ้งเตือนถึงคุณไหม</string>
+    <string name="offline_dialog_image_description">ไอคอน</string>
+    <string name="offline_dialog_text">ขอขอบคุณที่ให้ความสนใจ\nเราจะแชร์ข้อมูลเพิ่มเติมเมื่อคุณกลับมาออนไลน์อีกครั้ง</string>
+    <string name="offline_notification_title">คุณกลับมาออนไลน์แล้ว มาดำเนินการต่อจากที่ค้างไว้กันเลย</string>
+    <string name="offline_notification_title_with_advertiser">คุณกลับมาออนไลน์แล้ว เรียนรู้ข้อมูลเกี่ยวกับ %s ต่อ</string>
+    <string name="offline_opt_in_confirm">ตกลง</string>
+    <string name="offline_opt_in_decline">ไม่เป็นไร</string>
+    <string name="offline_opt_in_message">เราจะส่งการแจ้งเตือนให้คุณพร้อมลิงก์ไปยังเว็บไซต์ของผู้ลงโฆษณา</string>
+    <string name="offline_opt_in_title">เปิดโฆษณาเมื่อคุณกลับมาออนไลน์</string>
     <string name="password_toggle_content_description">แสดงรหัสผ่าน</string>
     <string msgid="5941395253238309765" name="range_end">"จุดสิ้นสุดของช่วง"</string>
     <string msgid="7097486360902471446" name="range_start">"จุดเริ่มต้นของช่วง"</string>
+    <string name="s1">บันทึกรูปภาพ</string>
+    <string name="s2">อนุญาตให้โฆษณาจัดเก็บรูปภาพในแกลเลอรีภาพไหม</string>
+    <string name="s3">ยอมรับ</string>
+    <string name="s4">ปฏิเสธ</string>
+    <string name="s5">สร้างกิจกรรมในปฏิทิน</string>
+    <string name="s6">อนุญาตให้โฆษณาสร้างกิจกรรมในปฏิทินไหม</string>
+    <string name="s7">โฆษณาทดสอบ</string>
     <string msgid="6264217191555673260" name="search_menu_title">"ค้นหา"</string>
     <string name="searchview_clear_text_content_description">ล้างข้อความ</string>
     <string name="searchview_navigation_content_description">กลับ</string>
@@ -219,4 +240,5 @@
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> เปอร์เซ็นต์"</string>
     <string msgid="3765533235322692011" name="tooltip_description">"เคล็ดลับเครื่องมือ"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"แสดงเคล็ดลับเครื่องมือ"</string>
+    <string name="watermark_label_prefix">AdMob - </string>
 </resources>

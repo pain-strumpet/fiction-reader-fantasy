@@ -60,6 +60,13 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.unit.sp
 import com.google.firebase.auth.FirebaseAuth
 import kotlin.collections.toMutableMap
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.rewarded.RewardedAd
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.AdError
 
 class MainActivity : ComponentActivity() {
 
@@ -87,6 +94,51 @@ class MainActivity : ComponentActivity() {
                     Log.e(TAG, "Failed to unlock story", e)
                 }
         }
+        fun loadAndShowRewardedAd(
+            activity: ComponentActivity,
+            onAdWatched: () -> Unit,
+            onAdFailed: () -> Unit
+        ) {
+            val adRequest = AdRequest.Builder().build()
+
+            RewardedAd.load(
+                activity,
+                "ca-app-pub-3940256099942544/5224354917",
+                adRequest,
+                object : RewardedAdLoadCallback() {
+                    override fun onAdLoaded(ad: RewardedAd) {
+                        var rewardEarned = false
+
+                        // Set up callback for when ad is dismissed
+                        ad.fullScreenContentCallback = object : com.google.android.gms.ads.FullScreenContentCallback() {
+                            override fun onAdDismissedFullScreenContent() {
+                                if (!rewardEarned) {
+                                    Log.d(TAG, "Ad dismissed without reward")
+                                    onAdFailed()
+                                }
+                            }
+
+                            override fun onAdFailedToShowFullScreenContent(error: com.google.android.gms.ads.AdError) {
+                                Log.e(TAG, "Ad failed to show: ${error.message}")
+                                onAdFailed()
+                            }
+                        }
+
+                        // Show the ad
+                        ad.show(activity) { rewardItem ->
+                            Log.d(TAG, "User earned reward: ${rewardItem.amount}")
+                            rewardEarned = true
+                            onAdWatched()
+                        }
+                    }
+
+                    override fun onAdFailedToLoad(error: LoadAdError) {
+                        Log.e(TAG, "Ad failed to load: ${error.message}")
+                        onAdFailed()
+                    }
+                }
+            )
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -99,6 +151,10 @@ class MainActivity : ComponentActivity() {
             .build()
 
         FirebaseApp.initializeApp(this, options)
+
+        MobileAds.initialize(this) {
+            Log.d(TAG, "AdMob initialized")
+        }
 
         // Initialize Firebase Auth
         val auth = FirebaseAuth.getInstance()
@@ -253,12 +309,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private tailrec fun Context.findActivity(): ComponentActivity? = when (this) {
-        is ComponentActivity -> this
-        is ContextWrapper -> baseContext.findActivity()
-        else -> null
-    }
-
     @Composable
     fun SubscriptionScreen(
         subscribed: Boolean,
@@ -273,6 +323,9 @@ class MainActivity : ComponentActivity() {
         // Add navigation state
         var selectedStory by remember { mutableStateOf<Map<String, Any>?>(null) }
 
+        // reduce ad lag
+        var isLoadingAd by remember { mutableStateOf(false) }
+
         // Show story reader if a story is selected
         if (selectedStory != null) {
             StoryReaderScreen(
@@ -286,7 +339,7 @@ class MainActivity : ComponentActivity() {
         val today = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US)
             .format(java.util.Date())
 
-        // Query for today's stories
+// Query for today's stories
         val stories = remember { mutableStateOf<List<Map<String, Any>>>(emptyList()) }
 
         LaunchedEffect(Unit) {
@@ -302,6 +355,25 @@ class MainActivity : ComponentActivity() {
                     }.sortedBy { (it["dayIndex"] as? Long)?.toInt() ?: 0 }
                     stories.value = sortedStories
                 }
+        }
+
+// Track loading and unlocked states per story
+        var loadingStoryId by remember { mutableStateOf<String?>(null) }
+        val unlockedStoryIds = remember { mutableStateOf(setOf<String>()) }
+
+// Check which stories user has already unlocked
+        LaunchedEffect(userId) {
+            if (userId.isNotEmpty()) {
+                val db = Firebase.firestore
+                db.collection("users")
+                    .document(userId)
+                    .collection("unlockedStories")
+                    .get()
+                    .addOnSuccessListener { documents ->
+                        val unlockedIds = documents.map { it.id }.toSet()
+                        unlockedStoryIds.value = unlockedIds
+                    }
+            }
         }
 
         Column(
@@ -347,15 +419,62 @@ class MainActivity : ComponentActivity() {
                                         selectedStory = story
                                     }
                                     index in 1..3 -> {
-                                        // Ad-gated story
+                                        val storyId = story["id"] as? String ?: ""
+
+                                        // Subscribers get instant access to all stories
+                                        if (subscribed) {
+                                            MainActivity.unlockStoryForUser(userId, storyId, "subscription")
+                                            selectedStory = story
+                                            return@Card
+                                        }
+
+                                        // Check if already unlocked
+                                        if (unlockedStoryIds.value.contains(storyId)) {
+                                            selectedStory = story
+                                            return@Card
+                                        }
+
+                                        // Prevent multiple clicks on same story
+                                        if (loadingStoryId == storyId) {
+                                            Toast.makeText(
+                                                context,
+                                                "Ad is loading, please wait...",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                            return@Card
+                                        }
+
+                                        // Show loading for this specific story
+                                        loadingStoryId = storyId
                                         Toast.makeText(
                                             context,
-                                            "Ad would show here, then story opens",
+                                            "Loading ad...",
                                             Toast.LENGTH_SHORT
                                         ).show()
-                                        // Track after "watching ad"
-                                        MainActivity.unlockStoryForUser(userId, story["id"] as? String ?: "", "ad")
-                                        selectedStory = story
+
+                                        val activity = context.findActivity()
+                                        if (activity != null) {
+                                            MainActivity.loadAndShowRewardedAd(
+                                                activity = activity,
+                                                onAdWatched = {
+                                                    // User watched the ad, unlock and show story
+                                                    MainActivity.unlockStoryForUser(userId, storyId, "ad")
+                                                    unlockedStoryIds.value = unlockedStoryIds.value + storyId
+                                                    selectedStory = story
+                                                    loadingStoryId = null
+                                                },
+                                                onAdFailed = {
+                                                    Toast.makeText(
+                                                        context,
+                                                        "Ad failed to load. Try again later.",
+                                                        Toast.LENGTH_SHORT
+                                                    ).show()
+                                                    loadingStoryId = null
+                                                }
+                                            )
+                                        } else {
+                                            loadingStoryId = null
+                                        }
                                     }
                                     index == 4 -> {
                                         if (subscribed) {
@@ -384,12 +503,21 @@ class MainActivity : ComponentActivity() {
                                 Text(
                                     text = when {
                                         index == 0 -> "FREE"
-                                        index in 1..3 -> "🎬 AD"
-                                        index == 4 && subscribed -> "PREMIUM"
-                                        else -> "🔒 PRO"
+                                        index in 1..3 -> {
+                                            val storyId = story["id"] as? String ?: ""
+                                            when {
+                                                subscribed -> "✓ SUBSCRIBER"
+                                                loadingStoryId == storyId -> "⏳ LOADING..."
+                                                unlockedStoryIds.value.contains(storyId) -> "✓ UNLOCKED"
+                                                else -> "🎬 AD"
+                                            }
+                                        }
+                                        index == 4 -> if (subscribed) "✓ PREMIUM" else "🔒 PRO"
+                                        else -> "🔒"
                                     },
                                     color = when {
                                         index == 0 -> Color.Green
+                                        index in 1..3 && unlockedStoryIds.value.contains(story["id"] as? String ?: "") -> Color.Blue
                                         subscribed -> Color.Blue
                                         else -> Color.Gray
                                     }
@@ -521,6 +649,15 @@ And so began the most extraordinary chapter in the kingdom's history...
         }
     }
 
+    // Add findActivity here - outside of SubscriptionScreen
+    private fun Context.findActivity(): ComponentActivity? {
+        var context = this
+        while (context is ContextWrapper) {
+            if (context is ComponentActivity) return context
+            context = context.baseContext
+        }
+        return null
+    }
     @Composable
     fun StoryReaderScreen(
         story: Map<String, Any>,

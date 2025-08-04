@@ -199,11 +199,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">Πατήστε για εναλλαγή στην προβολή έτους</string>
     <string name="mtrl_timepicker_cancel">Ακύρωση</string>
     <string name="mtrl_timepicker_confirm">ΟΚ</string>
+    <string name="native_body">Σώμα</string>
+    <string name="native_headline">Τίτλος</string>
+    <string name="native_media_view">Προβολή μέσων</string>
     <string msgid="542007171693138492" name="navigation_menu">"Μενού πλοήγησης"</string>
     <string msgid="6610465462668679431" name="not_selected">"Δεν έχει επιλεχθεί"</string>
+    <string name="notifications_permission_confirm">Να επιτρέπεται</string>
+    <string name="notifications_permission_decline">Να μην επιτρέπεται</string>
+    <string name="notifications_permission_title">Να επιτρέπεται στην εφαρμογή να σας στέλνει ειδοποιήσεις;</string>
+    <string name="offline_dialog_image_description">Εικονίδιο</string>
+    <string name="offline_dialog_text">Ευχαριστούμε για το ενδιαφέρον που δείχνετε.\nΘα σας δώσουμε περισσότερες πληροφορίες μόλις συνδεθείτε ξανά στο διαδίκτυο.</string>
+    <string name="offline_notification_title">Συνδεθήκατε ξανά στο διαδίκτυο! Ας συνεχίσουμε από εκεί που σταματήσαμε</string>
+    <string name="offline_notification_title_with_advertiser">Συνδεθήκατε ξανά στο διαδίκτυο! Μάθετε περισσότερα για τον διαφημιζόμενο %s</string>
+    <string name="offline_opt_in_confirm">ΟΚ</string>
+    <string name="offline_opt_in_decline">Όχι</string>
+    <string name="offline_opt_in_message">Θα σας στείλουμε μια ειδοποίηση με έναν σύνδεσμο στον ιστότοπο του διαφημιζόμενου.</string>
+    <string name="offline_opt_in_title">Άνοιγμα της διαφήμισης όταν συνδεθείτε ξανά στο διαδίκτυο</string>
     <string name="password_toggle_content_description">Εμφάνιση κωδικού πρόσβασης</string>
     <string msgid="5941395253238309765" name="range_end">"Τέλος εύρους"</string>
     <string msgid="7097486360902471446" name="range_start">"Αρχή εύρους"</string>
+    <string name="s1">Αποθήκευση εικόνας</string>
+    <string name="s2">Να επιτραπεί στη διαφήμιση να αποθηκεύσει την εικόνα στο gallery φωτογραφιών;</string>
+    <string name="s3">Αποδοχή</string>
+    <string name="s4">Απόρριψη</string>
+    <string name="s5">Δημιουργία συμβάντος ημερολογίου</string>
+    <string name="s6">Να επιτραπεί στη διαφήμιση να δημιουργήσει ένα συμβάν ημερολογίου;</string>
+    <string name="s7">Δοκιμαστική διαφήμιση</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Αναζήτηση"</string>
     <string name="searchview_clear_text_content_description">Διαγραφή κειμένου</string>
     <string name="searchview_navigation_content_description">Πίσω</string>
@@ -219,4 +240,5 @@
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> τοις εκατό."</string>
     <string msgid="3765533235322692011" name="tooltip_description">"επεξήγηση εργαλείου"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"εμφάνιση επεξήγησης εργαλείου"</string>
+    <string name="watermark_label_prefix">AdMob - </string>
 </resources>

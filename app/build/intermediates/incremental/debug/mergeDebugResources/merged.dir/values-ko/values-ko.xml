@@ -199,11 +199,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">탭하여 연도 뷰로 전환</string>
     <string name="mtrl_timepicker_cancel">취소</string>
     <string name="mtrl_timepicker_confirm">확인</string>
+    <string name="native_body">본문</string>
+    <string name="native_headline">광고 제목</string>
+    <string name="native_media_view">미디어 보기</string>
     <string msgid="542007171693138492" name="navigation_menu">"탐색 메뉴"</string>
     <string msgid="6610465462668679431" name="not_selected">"선택되지 않음"</string>
+    <string name="notifications_permission_confirm">허용</string>
+    <string name="notifications_permission_decline">허용 안함</string>
+    <string name="notifications_permission_title">앱에서 알림을 보내도록 허용하시겠습니까?</string>
+    <string name="offline_dialog_image_description">아이콘</string>
+    <string name="offline_dialog_text">관심을 가져 주셔서 감사합니다.\n인터넷에 다시 연결되면 더 많은 내용을 공유해 드리겠습니다.</string>
+    <string name="offline_notification_title">인터넷에 다시 연결되었습니다. 최근 감상한 부분부터 이어서 감상해 보세요</string>
+    <string name="offline_notification_title_with_advertiser">인터넷에 다시 연결되었습니다. %s에 관해 계속 알아보세요</string>
+    <string name="offline_opt_in_confirm">확인</string>
+    <string name="offline_opt_in_decline">나중에</string>
+    <string name="offline_opt_in_message">광고주 사이트로 연결되는 링크와 함께 알림을 보내 드리겠습니다.</string>
+    <string name="offline_opt_in_title">다시 온라인 상태가 될 때 광고 열기</string>
     <string name="password_toggle_content_description">비밀번호 표시</string>
     <string msgid="5941395253238309765" name="range_end">"범위 끝"</string>
     <string msgid="7097486360902471446" name="range_start">"범위 시작"</string>
+    <string name="s1">이미지 저장</string>
+    <string name="s2">광고에서 사진 갤러리에 이미지를 저장하도록 허용하시겠습니까?</string>
+    <string name="s3">동의</string>
+    <string name="s4">거부</string>
+    <string name="s5">캘린더 일정 만들기</string>
+    <string name="s6">광고에서 캘린더 일정을 만들도록 허용하시겠습니까?</string>
+    <string name="s7">테스트 광고</string>
     <string msgid="6264217191555673260" name="search_menu_title">"검색"</string>
     <string name="searchview_clear_text_content_description">텍스트 삭제</string>
     <string name="searchview_navigation_content_description">뒤로</string>
@@ -219,4 +240,5 @@
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g>퍼센트"</string>
     <string msgid="3765533235322692011" name="tooltip_description">"도움말"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"도움말 표시"</string>
+    <string name="watermark_label_prefix">AdMob - </string>
 </resources>

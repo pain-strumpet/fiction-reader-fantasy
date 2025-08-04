@@ -199,11 +199,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">Tik om na jaaraansig oor te skakel</string>
     <string name="mtrl_timepicker_cancel">Kanselleer</string>
     <string name="mtrl_timepicker_confirm">OK</string>
+    <string name="native_body">Teksinhoud</string>
+    <string name="native_headline">Opskrif</string>
+    <string name="native_media_view">Media-aansig</string>
     <string msgid="542007171693138492" name="navigation_menu">"Navigasiekieslys"</string>
     <string msgid="6610465462668679431" name="not_selected">"Nie gekies nie"</string>
+    <string name="notifications_permission_confirm">Laat toe</string>
+    <string name="notifications_permission_decline">Moenie toelaat nie</string>
+    <string name="notifications_permission_title">Laat app toe om vir jou kennisgewings te stuur?</string>
+    <string name="offline_dialog_image_description">Ikoon</string>
+    <string name="offline_dialog_text">Dankie vir jou belangstelling.\nOns sal meer deel sodra jy weer aanlyn is.</string>
+    <string name="offline_notification_title">Jy is weer aanlyn! Kom ons gaan aan waar ons opgehou het</string>
+    <string name="offline_notification_title_with_advertiser">Jy is weer aanlyn! Hou aan om te leer oor %s</string>
+    <string name="offline_opt_in_confirm">OK</string>
+    <string name="offline_opt_in_decline">Nee, dankie</string>
+    <string name="offline_opt_in_message">Ons sal vir jou \'n kennisgewing stuur met \'n skakel na die adverteerder se werf toe.</string>
+    <string name="offline_opt_in_title">Maak advertensie oop wanneer jy weer aanlyn is.</string>
     <string name="password_toggle_content_description">Wys wagwoord</string>
     <string msgid="5941395253238309765" name="range_end">"Eindgrens"</string>
     <string msgid="7097486360902471446" name="range_start">"Begingrens"</string>
+    <string name="s1">Stoor prent</string>
+    <string name="s2">Laat advertensie toe om prent in Prentgalery te stoor?</string>
+    <string name="s3">Aanvaar</string>
+    <string name="s4">Wys af</string>
+    <string name="s5">Skep kalendergeleentheid</string>
+    <string name="s6">Laat advertensie toe om \'n kalendergeleentheid te skep?</string>
+    <string name="s7">Toetsadvertensie</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Soek"</string>
     <string name="searchview_clear_text_content_description">Vee teks uit</string>
     <string name="searchview_navigation_content_description">Terug</string>
@@ -219,4 +240,5 @@
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> persent."</string>
     <string msgid="3765533235322692011" name="tooltip_description">"nutswenk"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"wys nutswenk"</string>
+    <string name="watermark_label_prefix">AdMob - </string>
 </resources>

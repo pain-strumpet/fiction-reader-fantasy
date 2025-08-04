@@ -199,11 +199,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">Tik om over te schakelen naar de jaarweergave</string>
     <string name="mtrl_timepicker_cancel">Annuleren</string>
     <string name="mtrl_timepicker_confirm">OK</string>
+    <string name="native_body">Tekstgedeelte</string>
+    <string name="native_headline">Kop</string>
+    <string name="native_media_view">Mediacontent</string>
     <string msgid="542007171693138492" name="navigation_menu">"Navigatiemenu"</string>
     <string msgid="6610465462668679431" name="not_selected">"Niet geselecteerd"</string>
+    <string name="notifications_permission_confirm">Toestaan</string>
+    <string name="notifications_permission_decline">Niet toestaan</string>
+    <string name="notifications_permission_title">App toestaan om je meldingen te sturen?</string>
+    <string name="offline_dialog_image_description">Icoon</string>
+    <string name="offline_dialog_text">Bedankt voor je interesse.\nWe delen meer zodra je weer online bent.</string>
+    <string name="offline_notification_title">Je bent weer online. Laten we verder gaan waar we waren gebleven.</string>
+    <string name="offline_notification_title_with_advertiser">Je bent weer online. Ga verder met leren over %s.</string>
+    <string name="offline_opt_in_confirm">OK</string>
+    <string name="offline_opt_in_decline">Nee, bedankt</string>
+    <string name="offline_opt_in_message">We sturen je een melding met een link naar de site van de adverteerder.</string>
+    <string name="offline_opt_in_title">Advertentie openen als je weer online bent</string>
     <string name="password_toggle_content_description">Wachtwoord tonen</string>
     <string msgid="5941395253238309765" name="range_end">"Einde bereik"</string>
     <string msgid="7097486360902471446" name="range_start">"Start bereik"</string>
+    <string name="s1">Afbeelding opslaan</string>
+    <string name="s2">Advertentie toestaan om afbeelding op te slaan in fotogalerij?</string>
+    <string name="s3">Accepteren</string>
+    <string name="s4">Weigeren</string>
+    <string name="s5">Agenda-afspraak maken</string>
+    <string name="s6">Advertentie toestaan om een agenda-afspraak te maken?</string>
+    <string name="s7">Testadvertentie</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Zoeken"</string>
     <string name="searchview_clear_text_content_description">Tekst wissen</string>
     <string name="searchview_navigation_content_description">Terug</string>
@@ -219,4 +240,5 @@
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> procent."</string>
     <string msgid="3765533235322692011" name="tooltip_description">"tooltip"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"tooltip tonen"</string>
+    <string name="watermark_label_prefix">AdMob - </string>
 </resources>

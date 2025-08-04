@@ -63,11 +63,14 @@ dependencies {
     // Material components (for theme linking)
     implementation "com.google.android.material:material:1.12.0"
 
-// Firebase BoM 34.x
+    // Firebase BoM 34.x
     implementation platform("com.google.firebase:firebase-bom:34.0.0")
 
-// Use the main firestore artefact – it now contains the KTX extensions
+    // Use the main firestore artefact – it now contains the KTX extensions
     implementation "com.google.firebase:firebase-firestore"
     implementation("com.google.firebase:firebase-auth:24.0.0")
+
+    // ads
+    implementation("com.google.android.gms:play-services-ads:24.5.0")
 
 }

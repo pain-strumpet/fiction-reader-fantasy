@@ -199,11 +199,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">Ketuk untuk beralih ke tampilan tahun</string>
     <string name="mtrl_timepicker_cancel">Batal</string>
     <string name="mtrl_timepicker_confirm">Oke</string>
+    <string name="native_body">Isi</string>
+    <string name="native_headline">Judul</string>
+    <string name="native_media_view">Tampilan Media</string>
     <string msgid="542007171693138492" name="navigation_menu">"Menu navigasi"</string>
     <string msgid="6610465462668679431" name="not_selected">"Tidak dipilih"</string>
+    <string name="notifications_permission_confirm">Izinkan</string>
+    <string name="notifications_permission_decline">Jangan izinkan</string>
+    <string name="notifications_permission_title">Izinkan aplikasi mengirim notifikasi kepada Anda?</string>
+    <string name="offline_dialog_image_description">Ikon</string>
+    <string name="offline_dialog_text">Terima kasih atas minat Anda.\nKami akan membagikan lebih banyak informasi setelah Anda kembali online.</string>
+    <string name="offline_notification_title">Anda kembali online. Mari kita lanjutkan progres sebelumnya</string>
+    <string name="offline_notification_title_with_advertiser">Anda kembali online. Lanjutkan mempelajari tentang %s</string>
+    <string name="offline_opt_in_confirm">Oke</string>
+    <string name="offline_opt_in_decline">Tidak</string>
+    <string name="offline_opt_in_message">Kami akan mengirimkan notifikasi kepada Anda berisi link ke situs pengiklan.</string>
+    <string name="offline_opt_in_title">Buka iklan ketika Anda kembali online.</string>
     <string name="password_toggle_content_description">Tampilkan sandi</string>
     <string msgid="5941395253238309765" name="range_end">"Rentang akhir"</string>
     <string msgid="7097486360902471446" name="range_start">"Rentang awal"</string>
+    <string name="s1">Simpan gambar</string>
+    <string name="s2">Izinkan Iklan menyimpan gambar di Galeri foto?</string>
+    <string name="s3">Terima</string>
+    <string name="s4">Tolak</string>
+    <string name="s5">Buat acara kalender</string>
+    <string name="s6">Izinkan Iklan membuat acara kalender?</string>
+    <string name="s7">Tes Iklan</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Telusuri"</string>
     <string name="searchview_clear_text_content_description">Hapus teks</string>
     <string name="searchview_navigation_content_description">Kembali</string>
@@ -219,4 +240,5 @@
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> persen."</string>
     <string msgid="3765533235322692011" name="tooltip_description">"tooltip"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"tampilkan tooltip"</string>
+    <string name="watermark_label_prefix">AdMob - </string>
 </resources>

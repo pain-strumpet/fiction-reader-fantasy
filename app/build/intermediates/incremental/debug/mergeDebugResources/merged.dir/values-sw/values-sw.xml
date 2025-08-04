@@ -199,11 +199,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">Gusa ili ubadilishe kwenda mwonekano wa mwaka</string>
     <string name="mtrl_timepicker_cancel">Ghairi</string>
     <string name="mtrl_timepicker_confirm">Sawa</string>
+    <string name="native_body">Kiini</string>
+    <string name="native_headline">Kichwa</string>
+    <string name="native_media_view">Mwonekano wa Maudhui</string>
     <string msgid="542007171693138492" name="navigation_menu">"Menyu ya kusogeza"</string>
     <string msgid="6610465462668679431" name="not_selected">"Hujachagua"</string>
+    <string name="notifications_permission_confirm">Ruhusu</string>
+    <string name="notifications_permission_decline">Usiruhusu</string>
+    <string name="notifications_permission_title">Ungependa kuruhusu programu ikutumie arifa?</string>
+    <string name="offline_dialog_image_description">Aikoni</string>
+    <string name="offline_dialog_text">Asante kwa kuvutiwa.\nTutakutumia maelezo zaidi pindi utakaporudi mtandaoni.</string>
+    <string name="offline_notification_title">Umerudi mtandaoni! Hebu tuendelee kuanzia mahali tulipoachia</string>
+    <string name="offline_notification_title_with_advertiser">Umerudi mtandaoni! Endelea kujifunza kuhusu %s</string>
+    <string name="offline_opt_in_confirm">Sawa</string>
+    <string name="offline_opt_in_decline">Hapana</string>
+    <string name="offline_opt_in_message">Tutakutumia arifa yenye kiungo kinachoelekeza kwenye tovuti ya mtangazaji.</string>
+    <string name="offline_opt_in_title">Fungua tangazo utakaporudi mtandaoni.</string>
     <string name="password_toggle_content_description">Onyesha nenosiri</string>
     <string msgid="5941395253238309765" name="range_end">"Mwisho wa masafa"</string>
     <string msgid="7097486360902471446" name="range_start">"Mwanzo wa masafa"</string>
+    <string name="s1">Hifadhi picha</string>
+    <string name="s2">Ungependa kuruhusu tangazo lihifadhi picha katika matunzio ya Picha?</string>
+    <string name="s3">Kubali</string>
+    <string name="s4">Kataa</string>
+    <string name="s5">Unda tukio la kalenda</string>
+    <string name="s6">Ungependa kuruhusu tangazo liunde tukio la kalenda?</string>
+    <string name="s7">Tangazo la Jaribio</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Tafuta"</string>
     <string name="searchview_clear_text_content_description">Futa maandishi</string>
     <string name="searchview_navigation_content_description">Rudi nyuma</string>
@@ -219,4 +240,5 @@
     <string msgid="5946805113151406391" name="template_percent">"Asilimia <ns1:g id="PERCENTAGE">%1$d</ns1:g>."</string>
     <string msgid="3765533235322692011" name="tooltip_description">"kidirisha cha vidokezo"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"onyesha kidirisha cha vidokezo"</string>
+    <string name="watermark_label_prefix">AdMob - </string>
 </resources>

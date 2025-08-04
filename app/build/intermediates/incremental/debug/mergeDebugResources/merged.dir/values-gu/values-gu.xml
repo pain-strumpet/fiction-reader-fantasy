@@ -199,11 +199,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">વર્ષ વ્યૂ પર સ્વિચ કરવા માટે ટૅપ કરો</string>
     <string name="mtrl_timepicker_cancel">રદ કરો</string>
     <string name="mtrl_timepicker_confirm">ઓકે</string>
+    <string name="native_body">મુખ્ય ભાગ</string>
+    <string name="native_headline">હેડલાઇન</string>
+    <string name="native_media_view">મીડિયા વ્યૂ</string>
     <string msgid="542007171693138492" name="navigation_menu">"નૅવિગેશન મેનૂ"</string>
     <string msgid="6610465462668679431" name="not_selected">"પસંદગી કરી નથી"</string>
+    <string name="notifications_permission_confirm">મંજૂરી આપો</string>
+    <string name="notifications_permission_decline">મંજૂરી આપશો નહીં</string>
+    <string name="notifications_permission_title">શું ઍપને તમને નોટિફિકેશન મોકલવાની મંજૂરી આપીએ?</string>
+    <string name="offline_dialog_image_description">આઇકન</string>
+    <string name="offline_dialog_text">તમારી રુચિ બતાવવા બદલ આભાર.\nતમે પાછા ઑનલાઇન આવો ત્યારે અમે વધુ માહિતી શેર કરીશું.</string>
+    <string name="offline_notification_title">તમે પાછા ઑનલાઇન છો! ચાલો, આપણે જ્યાંથી છોડ્યું હતું ત્યાંથી શરૂ કરીએ</string>
+    <string name="offline_notification_title_with_advertiser">તમે પાછા ઑનલાઇન છો! %s વિશે શીખવાનું ચાલુ રાખો</string>
+    <string name="offline_opt_in_confirm">ઓકે</string>
+    <string name="offline_opt_in_decline">ના, આભાર</string>
+    <string name="offline_opt_in_message">અમે તમને જાહેરાતકર્તાની સાઇટની લિંક ધરાવતું નોટિફિકેશન મોકલીશું.</string>
+    <string name="offline_opt_in_title">તમે ફરી પાછા ઑનલાઇન થાઓ, ત્યારે જાહેરાત ખોલો.</string>
     <string name="password_toggle_content_description">પાસવર્ડ બતાવો</string>
     <string msgid="5941395253238309765" name="range_end">"રેંજની સમાપ્તિ"</string>
     <string msgid="7097486360902471446" name="range_start">"રેંજની શરૂઆત"</string>
+    <string name="s1">છબી સાચવો</string>
+    <string name="s2">જાહેરાતને ચિત્ર ગૅલેરીમાં છબી સંગ્રહિત કરવાની મંજૂરી આપીએ?</string>
+    <string name="s3">સ્વીકારો</string>
+    <string name="s4">નકારો</string>
+    <string name="s5">કૅલેન્ડર ઇવેન્ટ બનાવો</string>
+    <string name="s6">જાહેરાતને કૅલેન્ડર ઇવેન્ટ બનાવવાની મંજૂરી આપીએ?</string>
+    <string name="s7">પરીક્ષણની જાહેરાત</string>
     <string msgid="6264217191555673260" name="search_menu_title">"શોધો"</string>
     <string name="searchview_clear_text_content_description">ટેક્સ્ટ સાફ કરો</string>
     <string name="searchview_navigation_content_description">પાછળ</string>
@@ -219,4 +240,5 @@
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> ટકા."</string>
     <string msgid="3765533235322692011" name="tooltip_description">"ટૂલટિપ"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"ટૂલટિપ બતાવો"</string>
+    <string name="watermark_label_prefix">AdMob - </string>
 </resources>

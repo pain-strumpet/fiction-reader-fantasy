@@ -200,11 +200,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">יש להקיש כדי לעבור לתצוגת שנתית</string>
     <string name="mtrl_timepicker_cancel">ביטול</string>
     <string name="mtrl_timepicker_confirm">אישור</string>
+    <string name="native_body">גוף המודעה</string>
+    <string name="native_headline">כותרת</string>
+    <string name="native_media_view">תצוגת המדיה</string>
     <string msgid="542007171693138492" name="navigation_menu">"תפריט הניווט"</string>
     <string msgid="6610465462668679431" name="not_selected">"לא נבחר"</string>
+    <string name="notifications_permission_confirm">אישור</string>
+    <string name="notifications_permission_decline">אין אישור</string>
+    <string name="notifications_permission_title">לאפשר לאפליקציה לשלוח לך התראות?</string>
+    <string name="offline_dialog_image_description">סמל</string>
+    <string name="offline_dialog_text">‏תודה על ההתעניינות.\nנשתף עוד מידע ברגע שיהיה שוב חיבור לאינטרנט.</string>
+    <string name="offline_notification_title">החיבור לאינטרנט חזר. נמשיך בדיוק מאיפה שהפסקנו</string>
+    <string name="offline_notification_title_with_advertiser">החיבור לאינטרנט חזר. עכשיו אפשר להמשיך לקרוא על %s</string>
+    <string name="offline_opt_in_confirm">אישור</string>
+    <string name="offline_opt_in_decline">לא תודה</string>
+    <string name="offline_opt_in_message">נשלח לך התראה עם קישור לאתר המפרסם.</string>
+    <string name="offline_opt_in_title">יש לפתוח את המודעה כשיתחדש החיבור לאינטרנט.</string>
     <string name="password_toggle_content_description">הצגת סיסמה</string>
     <string msgid="5941395253238309765" name="range_end">"סוף הטווח"</string>
     <string msgid="7097486360902471446" name="range_start">"תחילת הטווח"</string>
+    <string name="s1">שמור את התמונה</string>
+    <string name="s2">האם לאפשר למודעה לאחסן תמונה בגלריית התמונות?</string>
+    <string name="s3">קבל</string>
+    <string name="s4">דחה</string>
+    <string name="s5">צור אירוע ביומן</string>
+    <string name="s6">האם לאפשר למודעה ליצור אירוע ביומן?</string>
+    <string name="s7">מודעת בדיקה</string>
     <string msgid="6264217191555673260" name="search_menu_title">"חיפוש"</string>
     <string name="searchview_clear_text_content_description">מחיקת הטקסט</string>
     <string name="searchview_navigation_content_description">חזרה</string>
@@ -220,4 +241,5 @@
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> אחוזים."</string>
     <string msgid="3765533235322692011" name="tooltip_description">"הסבר קצר"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"הצגת ההסבר הקצר"</string>
+    <string name="watermark_label_prefix">AdMob – </string>
 </resources>

@@ -77,9 +77,9 @@
     <string name="error_a11y_label">Eroare: nevalidă</string>
     <string name="error_icon_content_description">Eroare</string>
     <string name="exposed_dropdown_menu_content_description">Afișați meniul drop-down</string>
-    <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"Copiați linkul"</string>
-    <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"Deschideți în browser"</string>
-    <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Trimiteți linkul"</string>
+    <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"Copiază linkul"</string>
+    <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"Deschide în browser"</string>
+    <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Trimite linkul"</string>
     <string name="icon_content_description">Pictogramă de dialog</string>
     <string msgid="6827826412747255547" name="in_progress">"În curs"</string>
     <string msgid="7933458017204019916" name="indeterminate">"Bifată parțial"</string>
@@ -200,11 +200,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">Atingeți pentru a comuta la afișarea An</string>
     <string name="mtrl_timepicker_cancel">Anulați</string>
     <string name="mtrl_timepicker_confirm">OK</string>
+    <string name="native_body">Conținut</string>
+    <string name="native_headline">Titlu</string>
+    <string name="native_media_view">Afișarea fișierului media</string>
     <string msgid="542007171693138492" name="navigation_menu">"Meniu de navigare"</string>
     <string msgid="6610465462668679431" name="not_selected">"Neselectat"</string>
+    <string name="notifications_permission_confirm">Permite</string>
+    <string name="notifications_permission_decline">Nu permite</string>
+    <string name="notifications_permission_title">Permiți aplicației să îți trimită notificări?</string>
+    <string name="offline_dialog_image_description">Pictogramă</string>
+    <string name="offline_dialog_text">Îți mulțumim pentru interes.\nÎți vom oferi mai multe informații când revii online.</string>
+    <string name="offline_notification_title">Ești iar online! Reia de unde ai rămas</string>
+    <string name="offline_notification_title_with_advertiser">Ești iar online! Continuă să afli mai multe despre %s</string>
+    <string name="offline_opt_in_confirm">OK</string>
+    <string name="offline_opt_in_decline">Nu</string>
+    <string name="offline_opt_in_message">Îți vom trimite o notificare cu un link la site-ul advertiserului.</string>
+    <string name="offline_opt_in_title">Deschide anunțul când revii online.</string>
     <string name="password_toggle_content_description">Afișați parola</string>
     <string msgid="5941395253238309765" name="range_end">"Sfârșit de interval"</string>
     <string msgid="7097486360902471446" name="range_start">"Început de interval"</string>
+    <string name="s1">Salvează imaginea</string>
+    <string name="s2">Permiți ca anunțul să stocheze imaginea în Galeria de fotografii?</string>
+    <string name="s3">Acceptă</string>
+    <string name="s4">Refuză</string>
+    <string name="s5">Creează un eveniment în calendar</string>
+    <string name="s6">Permiți ca anunțul să creeze un eveniment în calendar?</string>
+    <string name="s7">Anunț de probă</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Căutați"</string>
     <string name="searchview_clear_text_content_description">Ștergeți textul</string>
     <string name="searchview_navigation_content_description">Înapoi</string>
@@ -220,4 +241,5 @@
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> %%."</string>
     <string msgid="3765533235322692011" name="tooltip_description">"balon explicativ"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"afișează balonul explicativ"</string>
+    <string name="watermark_label_prefix">AdMob – </string>
 </resources>

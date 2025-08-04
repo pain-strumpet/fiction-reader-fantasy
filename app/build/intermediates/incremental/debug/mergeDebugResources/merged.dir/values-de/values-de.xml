@@ -199,11 +199,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">Tippen, um zur Jahresansicht zu wechseln</string>
     <string name="mtrl_timepicker_cancel">Abbrechen</string>
     <string name="mtrl_timepicker_confirm">OK</string>
+    <string name="native_body">Text</string>
+    <string name="native_headline">Anzeigentitel</string>
+    <string name="native_media_view">Medienansicht</string>
     <string msgid="542007171693138492" name="navigation_menu">"Navigationsmenü"</string>
     <string msgid="6610465462668679431" name="not_selected">"Nicht ausgewählt"</string>
+    <string name="notifications_permission_confirm">Zulassen</string>
+    <string name="notifications_permission_decline">Nicht zulassen</string>
+    <string name="notifications_permission_title">App-Benachrichtigungen zulassen?</string>
+    <string name="offline_dialog_image_description">Symbol</string>
+    <string name="offline_dialog_text">Vielen Dank für dein Interesse.\nDu erhältst weitere Informationen, sobald du wieder online bist.</string>
+    <string name="offline_notification_title">Du bist wieder online! Machen wir da weiter, wo wir aufgehört haben</string>
+    <string name="offline_notification_title_with_advertiser">Du bist wieder online! Weitere Informationen zu %s</string>
+    <string name="offline_opt_in_confirm">OK</string>
+    <string name="offline_opt_in_decline">Nein danke</string>
+    <string name="offline_opt_in_message">Wir senden dir eine Benachrichtigung mit einem Link zur Website des Werbetreibenden.</string>
+    <string name="offline_opt_in_title">Werbung öffnen, wenn du wieder online bist.</string>
     <string name="password_toggle_content_description">Passwort anzeigen</string>
     <string msgid="5941395253238309765" name="range_end">"Bereichsende"</string>
     <string msgid="7097486360902471446" name="range_start">"Bereichsstart"</string>
+    <string name="s1">Bild speichern</string>
+    <string name="s2">Der Werbeanzeige erlauben, das Bild in der Bildergalerie zu speichern?</string>
+    <string name="s3">Zustimmen</string>
+    <string name="s4">Ablehnen</string>
+    <string name="s5">Kalendertermin erstellen</string>
+    <string name="s6">Der Werbeanzeige erlauben, einen Kalendertermin zu erstellen?</string>
+    <string name="s7">Testanzeige</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Suche"</string>
     <string name="searchview_clear_text_content_description">Text löschen</string>
     <string name="searchview_navigation_content_description">Zurück</string>
@@ -219,4 +240,5 @@
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> Prozent."</string>
     <string msgid="3765533235322692011" name="tooltip_description">"Kurzinfo"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"Kurzinfo anzeigen"</string>
+    <string name="watermark_label_prefix">AdMob – </string>
 </resources>

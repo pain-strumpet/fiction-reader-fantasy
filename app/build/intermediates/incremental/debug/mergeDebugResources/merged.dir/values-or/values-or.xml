@@ -199,11 +199,32 @@
     <string name="mtrl_picker_toggle_to_year_selection">Tap to switch to year view</string>
     <string name="mtrl_timepicker_cancel">Cancel</string>
     <string name="mtrl_timepicker_confirm">OK</string>
+    <string name="native_body">ବଡି</string>
+    <string name="native_headline">ହେଡଲାଇନ</string>
+    <string name="native_media_view">ମିଡିଆ ଭ୍ୟୁ</string>
     <string msgid="542007171693138492" name="navigation_menu">"ନାଭିଗେସନ୍ ମେନୁ"</string>
     <string msgid="6610465462668679431" name="not_selected">"ଚୟନ କରାଯାଇନାହିଁ"</string>
+    <string name="notifications_permission_confirm">ଅନୁମତି ଦିଅନ୍ତୁ</string>
+    <string name="notifications_permission_decline">ଅନୁମତି ଦିଅନ୍ତୁ ନାହିଁ</string>
+    <string name="notifications_permission_title">ଆପଣଙ୍କୁ ବିଜ୍ଞପ୍ତି ପଠାଇବାକୁ ଆପକୁ ଅନୁମତି ଦେବେ?</string>
+    <string name="offline_dialog_image_description">ଆଇକନ</string>
+    <string name="offline_dialog_text">ଆପଣଙ୍କ ଆଗ୍ରହ ପାଇଁ ଧନ୍ୟବାଦ।\nଆପଣ ପୁଣି ଅନଲାଇନ ହେବା ପରେ ଆମେ ଆଉ ଥରେ ସେୟାର କରିବୁ।</string>
+    <string name="offline_notification_title">ଆପଣ ପୁଣି ଅନଲାଇନ ହୋଇଛନ୍ତି! ଚାଲନ୍ତୁ ଯେଉଁଠି ଦେଖିବା ଛାଡ଼ିଥିଲେ ସେଠାରୁ ପୁଣି ଆରମ୍ଭ କରିବା</string>
+    <string name="offline_notification_title_with_advertiser">ଆପଣ ପୁଣି ଅନଲାଇନ ହୋଇଛନ୍ତି! %s ବିଷୟରେ ଜାଣିବା ଜାରି ରଖନ୍ତୁ</string>
+    <string name="offline_opt_in_confirm">ଠିକ ଅଛି</string>
+    <string name="offline_opt_in_decline">ନାଁ, ଥାଉ</string>
+    <string name="offline_opt_in_message">ବିଜ୍ଞାପନଦାତାଙ୍କ ସାଇଟର ଏକ ଲିଙ୍କ୍ ସହ ଆମେ ଆପଣଙ୍କୁ ଏକ ବିଜ୍ଞପ୍ତି ପଠାଇବୁ।</string>
+    <string name="offline_opt_in_title">ଆପଣ ପୁଣି ଅନଲାଇନ୍ ହେଲେ ବିଜ୍ଞାପନ ଖୋଲନ୍ତୁ।</string>
     <string name="password_toggle_content_description">ପାସ୍‍ୱାର୍ଡ ଦେଖାନ୍ତୁ</string>
     <string msgid="5941395253238309765" name="range_end">"ରେଞ୍ଜ ଶେଷ"</string>
     <string msgid="7097486360902471446" name="range_start">"ରେଞ୍ଜ ଆରମ୍ଭ"</string>
+    <string name="s1">ଇମେଜ୍ ସେଭ୍‌ କରନ୍ତୁ</string>
+    <string name="s2">ପିକ୍‌ଚର୍‌ ଗ୍ୟାଲେରୀରେ ଇମେଜ୍‌ଗୁଡ଼ିକ ଷ୍ଟୋର୍‌ କରିବା ପାଇଁ ବିଜ୍ଞାପନକୁ ଅନୁମତି ଦେବେ?</string>
+    <string name="s3">ଗ୍ରହଣ କରନ୍ତୁ</string>
+    <string name="s4">ପ୍ରତ୍ୟାଖ୍ୟାନ କରନ୍ତୁ</string>
+    <string name="s5">କ୍ୟାଲେଣ୍ଡର୍‌ ଇଭେଣ୍ଟ ତିଆରି କରନ୍ତୁ</string>
+    <string name="s6">ଏକ କ୍ୟାଲେଣ୍ଡର୍ ଇଭେଣ୍ଟ ତିଆରି କରିବା ପାଇଁ ବିଜ୍ଞାପନକୁ ଅନୁମତି ଦେବେ କି?</string>
+    <string name="s7">ପରୀକ୍ଷାମୂଳକ ବିଜ୍ଞାପନ</string>
     <string msgid="6264217191555673260" name="search_menu_title">"ସନ୍ଧାନ କରନ୍ତୁ"</string>
     <string name="searchview_clear_text_content_description">Clear text</string>
     <string name="searchview_navigation_content_description">Back</string>
@@ -219,4 +240,5 @@
     <string msgid="5946805113151406391" name="template_percent">"ଶତକଡ଼ା <ns1:g id="PERCENTAGE">%1$d</ns1:g>।"</string>
     <string msgid="3765533235322692011" name="tooltip_description">"ଟୁଲଟିପ"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"ଟୁଲଟିପ ଦେଖାନ୍ତୁ"</string>
+    <string name="watermark_label_prefix">AdMob </string>
 </resources>
