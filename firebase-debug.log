@@ -1,0 +1,501 @@
+[debug] [2025-08-04T17:47:27.749Z] ----------------------------------------------------------------------
+[debug] [2025-08-04T17:47:27.751Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2025-08-04T17:47:27.751Z] CLI Version:   14.11.2
+[debug] [2025-08-04T17:47:27.751Z] Platform:      win32
+[debug] [2025-08-04T17:47:27.751Z] Node Version:  v22.17.0
+[debug] [2025-08-04T17:47:27.752Z] Time:          Mon Aug 04 2025 13:47:27 GMT-0400 (Eastern Daylight Time)
+[debug] [2025-08-04T17:47:27.752Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-04T17:47:27.924Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-04T17:47:27.924Z] > authorizing via signed-in user (cherry.eric@gmail.com)
+[debug] [2025-08-04T17:47:27.924Z] [iam] checking project fantasy-fiction-reader-f892f for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-08-04T17:47:27.926Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:27.926Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:27.926Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions [none]
+[debug] [2025-08-04T17:47:27.927Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions x-goog-quota-user=projects/fantasy-fiction-reader-f892f
+[debug] [2025-08-04T17:47:27.927Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-08-04T17:47:28.192Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions 200
+[debug] [2025-08-04T17:47:28.193Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-08-04T17:47:28.193Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:28.193Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:28.193Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-08-04T17:47:28.193Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-08-04T17:47:28.425Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-08-04T17:47:28.425Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'fantasy-fiction-reader-f892f'...
+[info] 
+[info] i  deploying functions 
+[info] +  functions: Finished running predeploy script. 
+[debug] [2025-08-04T17:47:28.429Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:28.429Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:28.429Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f [none]
+[debug] [2025-08-04T17:47:28.548Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f 200
+[debug] [2025-08-04T17:47:28.548Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f {"projectNumber":"186826928823","projectId":"fantasy-fiction-reader-f892f","lifecycleState":"ACTIVE","name":"Fantasy Fiction Reader","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-07-31T13:53:52.484235Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2025-08-04T17:47:28.550Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:28.550Z] Checked if tokens are valid: true, expires at: 1754332273301
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-08-04T17:47:28.551Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:28.551Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:28.551Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/cloudbuild.googleapis.com [none]
+[debug] [2025-08-04T17:47:28.551Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/cloudbuild.googleapis.com x-goog-quota-user=projects/fantasy-fiction-reader-f892f
+[debug] [2025-08-04T17:47:28.552Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/artifactregistry.googleapis.com [none]
+[debug] [2025-08-04T17:47:28.552Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/artifactregistry.googleapis.com x-goog-quota-user=projects/fantasy-fiction-reader-f892f
+[debug] [2025-08-04T17:47:28.940Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/artifactregistry.googleapis.com 200
+[debug] [2025-08-04T17:47:28.940Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/artifactregistry.googleapis.com [omitted]
+[warn] !  artifactregistry: missing required API artifactregistry.googleapis.com. Enabling now... 
+[debug] [2025-08-04T17:47:28.940Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:28.940Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:28.941Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/artifactregistry.googleapis.com:enable [none]
+[debug] [2025-08-04T17:47:28.941Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/artifactregistry.googleapis.com:enable x-goog-quota-user=projects/fantasy-fiction-reader-f892f
+[debug] [2025-08-04T17:47:28.942Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/cloudbuild.googleapis.com 200
+[debug] [2025-08-04T17:47:28.942Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/cloudbuild.googleapis.com [omitted]
+[warn] !  functions: missing required API cloudbuild.googleapis.com. Enabling now... 
+[debug] [2025-08-04T17:47:28.942Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:28.942Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:28.942Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/cloudbuild.googleapis.com:enable [none]
+[debug] [2025-08-04T17:47:28.942Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/cloudbuild.googleapis.com:enable x-goog-quota-user=projects/fantasy-fiction-reader-f892f
+[debug] [2025-08-04T17:47:29.571Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/cloudbuild.googleapis.com:enable 200
+[debug] [2025-08-04T17:47:29.571Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/cloudbuild.googleapis.com:enable [omitted]
+[debug] [2025-08-04T17:47:29.721Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/artifactregistry.googleapis.com:enable 200
+[debug] [2025-08-04T17:47:29.721Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/services/artifactregistry.googleapis.com:enable [omitted]
+[debug] [2025-08-04T17:47:39.734Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:39.735Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:39.735Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig [none]
+[debug] [2025-08-04T17:47:40.055Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig 200
+[debug] [2025-08-04T17:47:40.055Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig {"projectId":"fantasy-fiction-reader-f892f","storageBucket":"fantasy-fiction-reader-f892f.firebasestorage.app"}
+[debug] [2025-08-04T17:47:40.055Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:40.055Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:47:40.055Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs [none]
+[debug] [2025-08-04T17:47:40.318Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs 200
+[debug] [2025-08-04T17:47:40.319Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs {}
+[debug] [2025-08-04T17:47:40.320Z] Customer code is not Node
+[debug] [2025-08-04T17:47:40.320Z] Validating python source
+[debug] [2025-08-04T17:47:40.320Z] Building python source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-08-04T17:47:40.321Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-08-04T17:47:40.343Z] Running command with virtualenv: command="C:\Users\cherr\projects\fictionreader\functions\venv\Scripts\activate.bat", args=["","&&","python.exe","-c","\"import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))\""]
+[debug] [2025-08-04T17:47:40.445Z] stderr: Traceback (most recent call last):
+
+[debug] [2025-08-04T17:47:40.447Z] stderr:   File "<string>", line 1, in <module>
+    import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'firebase_functions'
+
+[debug] [2025-08-04T17:47:40.503Z] Error: spawn "C:\Users\cherr\projects\fictionreader\functions\venv\Scripts\activate.bat" ENOENT
+    at notFoundError (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:6:26)
+    at verifyENOENT (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:40:16)
+    at cp.emit (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:27:25)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-08-04T17:48:20.374Z] ----------------------------------------------------------------------
+[debug] [2025-08-04T17:48:20.377Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2025-08-04T17:48:20.377Z] CLI Version:   14.11.2
+[debug] [2025-08-04T17:48:20.377Z] Platform:      win32
+[debug] [2025-08-04T17:48:20.377Z] Node Version:  v22.17.0
+[debug] [2025-08-04T17:48:20.377Z] Time:          Mon Aug 04 2025 13:48:20 GMT-0400 (Eastern Daylight Time)
+[debug] [2025-08-04T17:48:20.377Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-04T17:48:20.529Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-04T17:48:20.530Z] > authorizing via signed-in user (cherry.eric@gmail.com)
+[debug] [2025-08-04T17:48:20.530Z] [iam] checking project fantasy-fiction-reader-f892f for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-08-04T17:48:20.531Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:20.531Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:20.531Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions [none]
+[debug] [2025-08-04T17:48:20.531Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions x-goog-quota-user=projects/fantasy-fiction-reader-f892f
+[debug] [2025-08-04T17:48:20.532Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-08-04T17:48:20.803Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions 200
+[debug] [2025-08-04T17:48:20.804Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-08-04T17:48:20.804Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:20.804Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:20.804Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-08-04T17:48:20.804Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-08-04T17:48:21.107Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-08-04T17:48:21.107Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'fantasy-fiction-reader-f892f'...
+[info] 
+[info] i  deploying functions 
+[info] +  functions: Finished running predeploy script. 
+[debug] [2025-08-04T17:48:21.111Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:21.111Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:21.111Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f [none]
+[debug] [2025-08-04T17:48:21.262Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f 200
+[debug] [2025-08-04T17:48:21.263Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f {"projectNumber":"186826928823","projectId":"fantasy-fiction-reader-f892f","lifecycleState":"ACTIVE","name":"Fantasy Fiction Reader","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-07-31T13:53:52.484235Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-08-04T17:48:21.265Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:21.265Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:21.265Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig [none]
+[debug] [2025-08-04T17:48:21.587Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig 200
+[debug] [2025-08-04T17:48:21.587Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig {"projectId":"fantasy-fiction-reader-f892f","storageBucket":"fantasy-fiction-reader-f892f.firebasestorage.app"}
+[debug] [2025-08-04T17:48:21.587Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:21.588Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:21.588Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs [none]
+[debug] [2025-08-04T17:48:21.783Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs 200
+[debug] [2025-08-04T17:48:21.783Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs {}
+[debug] [2025-08-04T17:48:21.784Z] Customer code is not Node
+[debug] [2025-08-04T17:48:21.785Z] Validating python source
+[debug] [2025-08-04T17:48:21.785Z] Building python source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-08-04T17:48:21.786Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-08-04T17:48:21.794Z] Running command with virtualenv: command="C:\Users\cherr\projects\fictionreader\functions\venv\Scripts\activate.bat", args=["","&&","python.exe","-c","\"import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))\""]
+[debug] [2025-08-04T17:48:21.887Z] stderr: Traceback (most recent call last):
+
+[debug] [2025-08-04T17:48:21.890Z] stderr:   File "<string>", line 1, in <module>
+    import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'firebase_functions'
+
+[debug] [2025-08-04T17:48:22.079Z] Error: spawn "C:\Users\cherr\projects\fictionreader\functions\venv\Scripts\activate.bat" ENOENT
+    at notFoundError (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:6:26)
+    at verifyENOENT (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:40:16)
+    at cp.emit (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:27:25)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-08-04T17:48:34.504Z] ----------------------------------------------------------------------
+[debug] [2025-08-04T17:48:34.506Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions --debug
+[debug] [2025-08-04T17:48:34.506Z] CLI Version:   14.11.2
+[debug] [2025-08-04T17:48:34.507Z] Platform:      win32
+[debug] [2025-08-04T17:48:34.507Z] Node Version:  v22.17.0
+[debug] [2025-08-04T17:48:34.507Z] Time:          Mon Aug 04 2025 13:48:34 GMT-0400 (Eastern Daylight Time)
+[debug] [2025-08-04T17:48:34.507Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-04T17:48:34.659Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-04T17:48:34.660Z] > authorizing via signed-in user (cherry.eric@gmail.com)
+[debug] [2025-08-04T17:48:34.660Z] [iam] checking project fantasy-fiction-reader-f892f for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-08-04T17:48:34.661Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:34.662Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:34.662Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions [none]
+[debug] [2025-08-04T17:48:34.663Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions x-goog-quota-user=projects/fantasy-fiction-reader-f892f
+[debug] [2025-08-04T17:48:34.663Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-08-04T17:48:34.940Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions 200
+[debug] [2025-08-04T17:48:34.940Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-08-04T17:48:34.941Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:34.941Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:34.941Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-08-04T17:48:34.941Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-08-04T17:48:35.190Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-08-04T17:48:35.190Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'fantasy-fiction-reader-f892f'...
+[info] 
+[info] i  deploying functions 
+[info] +  functions: Finished running predeploy script. 
+[debug] [2025-08-04T17:48:35.194Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:35.194Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:35.194Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f [none]
+[debug] [2025-08-04T17:48:35.314Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f 200
+[debug] [2025-08-04T17:48:35.314Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f {"projectNumber":"186826928823","projectId":"fantasy-fiction-reader-f892f","lifecycleState":"ACTIVE","name":"Fantasy Fiction Reader","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-07-31T13:53:52.484235Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-08-04T17:48:35.316Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:35.317Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:35.317Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig [none]
+[debug] [2025-08-04T17:48:35.603Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig 200
+[debug] [2025-08-04T17:48:35.604Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig {"projectId":"fantasy-fiction-reader-f892f","storageBucket":"fantasy-fiction-reader-f892f.firebasestorage.app"}
+[debug] [2025-08-04T17:48:35.604Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:35.605Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:48:35.605Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs [none]
+[debug] [2025-08-04T17:48:35.732Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs 200
+[debug] [2025-08-04T17:48:35.733Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs {}
+[debug] [2025-08-04T17:48:35.735Z] Customer code is not Node
+[debug] [2025-08-04T17:48:35.735Z] Validating python source
+[debug] [2025-08-04T17:48:35.735Z] Building python source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-08-04T17:48:35.736Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-08-04T17:48:35.744Z] Running command with virtualenv: command="C:\Users\cherr\projects\fictionreader\functions\venv\Scripts\activate.bat", args=["","&&","python.exe","-c","\"import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))\""]
+[debug] [2025-08-04T17:48:35.836Z] stderr: Traceback (most recent call last):
+
+[debug] [2025-08-04T17:48:35.839Z] stderr:   File "<string>", line 1, in <module>
+    import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'firebase_functions'
+
+[debug] [2025-08-04T17:48:35.948Z] Error: spawn "C:\Users\cherr\projects\fictionreader\functions\venv\Scripts\activate.bat" ENOENT
+    at notFoundError (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:6:26)
+    at verifyENOENT (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:40:16)
+    at cp.emit (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:27:25)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-08-04T17:50:35.662Z] ----------------------------------------------------------------------
+[debug] [2025-08-04T17:50:35.664Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2025-08-04T17:50:35.664Z] CLI Version:   14.11.2
+[debug] [2025-08-04T17:50:35.664Z] Platform:      win32
+[debug] [2025-08-04T17:50:35.664Z] Node Version:  v22.17.0
+[debug] [2025-08-04T17:50:35.665Z] Time:          Mon Aug 04 2025 13:50:35 GMT-0400 (Eastern Daylight Time)
+[debug] [2025-08-04T17:50:35.665Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-04T17:50:35.822Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-04T17:50:35.822Z] > authorizing via signed-in user (cherry.eric@gmail.com)
+[debug] [2025-08-04T17:50:35.823Z] [iam] checking project fantasy-fiction-reader-f892f for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-08-04T17:50:35.823Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:35.823Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:35.824Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions [none]
+[debug] [2025-08-04T17:50:35.824Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions x-goog-quota-user=projects/fantasy-fiction-reader-f892f
+[debug] [2025-08-04T17:50:35.824Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-08-04T17:50:36.177Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions 200
+[debug] [2025-08-04T17:50:36.177Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-08-04T17:50:36.177Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:36.177Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:36.177Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-08-04T17:50:36.177Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-08-04T17:50:36.471Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-08-04T17:50:36.471Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'fantasy-fiction-reader-f892f'...
+[info] 
+[info] i  deploying functions 
+[info] +  functions: Finished running predeploy script. 
+[debug] [2025-08-04T17:50:36.475Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:36.475Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:36.476Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f [none]
+[debug] [2025-08-04T17:50:36.591Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f 200
+[debug] [2025-08-04T17:50:36.591Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f {"projectNumber":"186826928823","projectId":"fantasy-fiction-reader-f892f","lifecycleState":"ACTIVE","name":"Fantasy Fiction Reader","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-07-31T13:53:52.484235Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-08-04T17:50:36.594Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:36.594Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:36.594Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig [none]
+[debug] [2025-08-04T17:50:36.886Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig 200
+[debug] [2025-08-04T17:50:36.886Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig {"projectId":"fantasy-fiction-reader-f892f","storageBucket":"fantasy-fiction-reader-f892f.firebasestorage.app"}
+[debug] [2025-08-04T17:50:36.886Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:36.886Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:36.887Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs [none]
+[debug] [2025-08-04T17:50:37.031Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs 200
+[debug] [2025-08-04T17:50:37.031Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs {}
+[debug] [2025-08-04T17:50:37.032Z] Customer code is not Node
+[debug] [2025-08-04T17:50:37.032Z] Validating python source
+[debug] [2025-08-04T17:50:37.032Z] Building python source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-08-04T17:50:37.033Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-08-04T17:50:37.041Z] Running command with virtualenv: command="C:\Users\cherr\projects\fictionreader\functions\venv\Scripts\activate.bat", args=["","&&","python.exe","-c","\"import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))\""]
+[debug] [2025-08-04T17:50:37.136Z] stderr: Traceback (most recent call last):
+
+[debug] [2025-08-04T17:50:37.138Z] stderr:   File "<string>", line 1, in <module>
+    import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+[debug] [2025-08-04T17:50:37.138Z] stderr: ModuleNotFoundError: No module named 'firebase_functions'
+
+[debug] [2025-08-04T17:50:37.302Z] Error: spawn "C:\Users\cherr\projects\fictionreader\functions\venv\Scripts\activate.bat" ENOENT
+    at notFoundError (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:6:26)
+    at verifyENOENT (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:40:16)
+    at cp.emit (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:27:25)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-08-04T17:50:44.239Z] ----------------------------------------------------------------------
+[debug] [2025-08-04T17:50:44.241Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions --debug
+[debug] [2025-08-04T17:50:44.241Z] CLI Version:   14.11.2
+[debug] [2025-08-04T17:50:44.241Z] Platform:      win32
+[debug] [2025-08-04T17:50:44.242Z] Node Version:  v22.17.0
+[debug] [2025-08-04T17:50:44.242Z] Time:          Mon Aug 04 2025 13:50:44 GMT-0400 (Eastern Daylight Time)
+[debug] [2025-08-04T17:50:44.242Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-04T17:50:44.409Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-04T17:50:44.410Z] > authorizing via signed-in user (cherry.eric@gmail.com)
+[debug] [2025-08-04T17:50:44.410Z] [iam] checking project fantasy-fiction-reader-f892f for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-08-04T17:50:44.411Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:44.412Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:44.412Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions [none]
+[debug] [2025-08-04T17:50:44.413Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions x-goog-quota-user=projects/fantasy-fiction-reader-f892f
+[debug] [2025-08-04T17:50:44.413Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-08-04T17:50:44.693Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions 200
+[debug] [2025-08-04T17:50:44.694Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-08-04T17:50:44.694Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:44.694Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:44.695Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-08-04T17:50:44.695Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-08-04T17:50:44.928Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-08-04T17:50:44.929Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'fantasy-fiction-reader-f892f'...
+[info] 
+[info] i  deploying functions 
+[info] +  functions: Finished running predeploy script. 
+[debug] [2025-08-04T17:50:44.933Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:44.933Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:44.933Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f [none]
+[debug] [2025-08-04T17:50:45.056Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f 200
+[debug] [2025-08-04T17:50:45.056Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f {"projectNumber":"186826928823","projectId":"fantasy-fiction-reader-f892f","lifecycleState":"ACTIVE","name":"Fantasy Fiction Reader","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-07-31T13:53:52.484235Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-08-04T17:50:45.059Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:45.059Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:45.059Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig [none]
+[debug] [2025-08-04T17:50:45.404Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig 200
+[debug] [2025-08-04T17:50:45.404Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig {"projectId":"fantasy-fiction-reader-f892f","storageBucket":"fantasy-fiction-reader-f892f.firebasestorage.app"}
+[debug] [2025-08-04T17:50:45.405Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:45.405Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T17:50:45.405Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs [none]
+[debug] [2025-08-04T17:50:45.563Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs 200
+[debug] [2025-08-04T17:50:45.564Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs {}
+[debug] [2025-08-04T17:50:45.566Z] Customer code is not Node
+[debug] [2025-08-04T17:50:45.566Z] Validating python source
+[debug] [2025-08-04T17:50:45.566Z] Building python source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-08-04T17:50:45.567Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-08-04T17:50:45.575Z] Running command with virtualenv: command="C:\Users\cherr\projects\fictionreader\functions\venv\Scripts\activate.bat", args=["","&&","python.exe","-c","\"import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))\""]
+[debug] [2025-08-04T17:50:45.667Z] stderr: Traceback (most recent call last):
+
+[debug] [2025-08-04T17:50:45.670Z] stderr:   File "<string>", line 1, in <module>
+    import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'firebase_functions'
+
+[debug] [2025-08-04T17:50:45.782Z] Error: spawn "C:\Users\cherr\projects\fictionreader\functions\venv\Scripts\activate.bat" ENOENT
+    at notFoundError (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:6:26)
+    at verifyENOENT (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:40:16)
+    at cp.emit (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:27:25)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-08-04T18:05:00.723Z] ----------------------------------------------------------------------
+[debug] [2025-08-04T18:05:00.725Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2025-08-04T18:05:00.726Z] CLI Version:   14.11.2
+[debug] [2025-08-04T18:05:00.726Z] Platform:      win32
+[debug] [2025-08-04T18:05:00.726Z] Node Version:  v22.17.0
+[debug] [2025-08-04T18:05:00.726Z] Time:          Mon Aug 04 2025 14:05:00 GMT-0400 (Eastern Daylight Time)
+[debug] [2025-08-04T18:05:00.726Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-04T18:05:00.886Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-04T18:05:00.886Z] > authorizing via signed-in user (cherry.eric@gmail.com)
+[debug] [2025-08-04T18:05:00.886Z] [iam] checking project fantasy-fiction-reader-f892f for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-08-04T18:05:00.887Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:00.887Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:00.888Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions [none]
+[debug] [2025-08-04T18:05:00.888Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions x-goog-quota-user=projects/fantasy-fiction-reader-f892f
+[debug] [2025-08-04T18:05:00.888Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-08-04T18:05:01.274Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions 200
+[debug] [2025-08-04T18:05:01.274Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-08-04T18:05:01.274Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:01.274Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:01.274Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-08-04T18:05:01.274Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-08-04T18:05:01.578Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-08-04T18:05:01.578Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'fantasy-fiction-reader-f892f'...
+[info] 
+[info] i  deploying functions 
+[debug] [2025-08-04T18:05:01.581Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:01.581Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:01.581Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f [none]
+[debug] [2025-08-04T18:05:01.713Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f 200
+[debug] [2025-08-04T18:05:01.713Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f {"projectNumber":"186826928823","projectId":"fantasy-fiction-reader-f892f","lifecycleState":"ACTIVE","name":"Fantasy Fiction Reader","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-07-31T13:53:52.484235Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-08-04T18:05:01.716Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:01.716Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:01.716Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig [none]
+[debug] [2025-08-04T18:05:02.037Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig 200
+[debug] [2025-08-04T18:05:02.038Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig {"projectId":"fantasy-fiction-reader-f892f","storageBucket":"fantasy-fiction-reader-f892f.firebasestorage.app"}
+[debug] [2025-08-04T18:05:02.038Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:02.038Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:02.038Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs [none]
+[debug] [2025-08-04T18:05:02.280Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs 200
+[debug] [2025-08-04T18:05:02.280Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs {}
+[debug] [2025-08-04T18:05:02.281Z] Customer code is not Node
+[debug] [2025-08-04T18:05:02.282Z] Validating python source
+[debug] [2025-08-04T18:05:02.282Z] Building python source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-08-04T18:05:02.283Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-08-04T18:05:02.291Z] Running command with virtualenv: command="C:\Users\cherr\projects\fictionreader\functions\venv\Scripts\activate.bat", args=["","&&","python.exe","-c","\"import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))\""]
+[debug] [2025-08-04T18:05:02.420Z] stderr: Traceback (most recent call last):
+
+[debug] [2025-08-04T18:05:02.421Z] stderr:   File "<string>", line 1, in <module>
+    import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'firebase_functions'
+
+[debug] [2025-08-04T18:05:02.603Z] Error: spawn "C:\Users\cherr\projects\fictionreader\functions\venv\Scripts\activate.bat" ENOENT
+    at notFoundError (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:6:26)
+    at verifyENOENT (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:40:16)
+    at cp.emit (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:27:25)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-08-04T18:05:14.664Z] ----------------------------------------------------------------------
+[debug] [2025-08-04T18:05:14.665Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions --debug
+[debug] [2025-08-04T18:05:14.666Z] CLI Version:   14.11.2
+[debug] [2025-08-04T18:05:14.666Z] Platform:      win32
+[debug] [2025-08-04T18:05:14.666Z] Node Version:  v22.17.0
+[debug] [2025-08-04T18:05:14.666Z] Time:          Mon Aug 04 2025 14:05:14 GMT-0400 (Eastern Daylight Time)
+[debug] [2025-08-04T18:05:14.666Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-04T18:05:14.821Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-04T18:05:14.822Z] > authorizing via signed-in user (cherry.eric@gmail.com)
+[debug] [2025-08-04T18:05:14.823Z] [iam] checking project fantasy-fiction-reader-f892f for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-08-04T18:05:14.824Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:14.824Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:14.825Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions [none]
+[debug] [2025-08-04T18:05:14.825Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions x-goog-quota-user=projects/fantasy-fiction-reader-f892f
+[debug] [2025-08-04T18:05:14.825Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-08-04T18:05:15.101Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions 200
+[debug] [2025-08-04T18:05:15.102Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-08-04T18:05:15.102Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:15.103Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:15.103Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-08-04T18:05:15.103Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-08-04T18:05:15.321Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-08-04T18:05:15.322Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/fantasy-fiction-reader-f892f/serviceAccounts/fantasy-fiction-reader-f892f@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'fantasy-fiction-reader-f892f'...
+[info] 
+[info] i  deploying functions 
+[debug] [2025-08-04T18:05:15.325Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:15.325Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:15.325Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f [none]
+[debug] [2025-08-04T18:05:15.427Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f 200
+[debug] [2025-08-04T18:05:15.427Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-fiction-reader-f892f {"projectNumber":"186826928823","projectId":"fantasy-fiction-reader-f892f","lifecycleState":"ACTIVE","name":"Fantasy Fiction Reader","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-07-31T13:53:52.484235Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-08-04T18:05:15.429Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:15.429Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:15.430Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig [none]
+[debug] [2025-08-04T18:05:15.707Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig 200
+[debug] [2025-08-04T18:05:15.708Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/adminSdkConfig {"projectId":"fantasy-fiction-reader-f892f","storageBucket":"fantasy-fiction-reader-f892f.firebasestorage.app"}
+[debug] [2025-08-04T18:05:15.709Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:15.709Z] Checked if tokens are valid: true, expires at: 1754332273301
+[debug] [2025-08-04T18:05:15.709Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs [none]
+[debug] [2025-08-04T18:05:15.843Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs 200
+[debug] [2025-08-04T18:05:15.844Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fantasy-fiction-reader-f892f/configs {}
+[debug] [2025-08-04T18:05:15.846Z] Customer code is not Node
+[debug] [2025-08-04T18:05:15.846Z] Validating python source
+[debug] [2025-08-04T18:05:15.846Z] Building python source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-08-04T18:05:15.847Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-08-04T18:05:15.855Z] Running command with virtualenv: command="C:\Users\cherr\projects\fictionreader\functions\venv\Scripts\activate.bat", args=["","&&","python.exe","-c","\"import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))\""]
+[debug] [2025-08-04T18:05:15.951Z] stderr: Traceback (most recent call last):
+
+[debug] [2025-08-04T18:05:15.953Z] stderr:   File "<string>", line 1, in <module>
+    import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'firebase_functions'
+
+[debug] [2025-08-04T18:05:16.062Z] Error: spawn "C:\Users\cherr\projects\fictionreader\functions\venv\Scripts\activate.bat" ENOENT
+    at notFoundError (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:6:26)
+    at verifyENOENT (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:40:16)
+    at cp.emit (C:\Users\cherr\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:27:25)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[error] 
+[error] Error: An unexpected error has occurred.

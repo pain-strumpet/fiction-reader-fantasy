@@ -739,6 +739,18 @@ And so began the most extraordinary chapter in the kingdom's history...
             ) {
                 Text("Debug: Check Stories")
             }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Button(
+                onClick = {
+                    // Trigger story generation manually
+                    val url = "https://us-central1-fantasy-fiction-reader-f892f.cloudfunctions.net/generate-stories-manual?key=test-key-123"
+                    // TODO: Make HTTP call
+                }
+            ) {
+                Text("Debug: Generate Stories Now")
+            }
         }
     }
 
