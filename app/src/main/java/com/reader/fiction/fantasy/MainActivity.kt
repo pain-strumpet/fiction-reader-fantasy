@@ -65,6 +65,12 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.google.android.gms.ads.MobileAds
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import androidx.lifecycle.lifecycleScope
 
 class MainActivity : ComponentActivity() {
 
@@ -321,6 +327,9 @@ class MainActivity : ComponentActivity() {
         // Add tab selection state
         var selectedTab by remember { mutableStateOf(0) } // 0 = Today, 1 = Library
 
+        val lifecycleOwner = androidx.lifecycle.compose.LocalLifecycleOwner.current
+        val lifecycleScope = lifecycleOwner.lifecycleScope
+
         // Show story reader if a story is selected
         if (selectedStory != null) {
             StoryReaderScreen(
@@ -471,7 +480,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.verticalScroll(rememberScrollState())
                 ) {
                     // Show different content based on selected tab
-                    val storiesToShow = if (selectedTab == 0) stories.value else libraryStories.value
+                    val storiesToShow =
+                        if (selectedTab == 0) stories.value else libraryStories.value
 
                     if (storiesToShow.isEmpty()) {
                         Text(
@@ -505,10 +515,15 @@ class MainActivity : ComponentActivity() {
                                             MainActivity.unlockStoryForUser(userId, storyId, "free")
                                             selectedStory = story
                                         }
+
                                         index in 1..3 -> {
                                             // Subscribers get instant access
                                             if (subscribed) {
-                                                MainActivity.unlockStoryForUser(userId, storyId, "subscription")
+                                                MainActivity.unlockStoryForUser(
+                                                    userId,
+                                                    storyId,
+                                                    "subscription"
+                                                )
                                                 selectedStory = story
                                                 return@Card
                                             }
@@ -542,8 +557,13 @@ class MainActivity : ComponentActivity() {
                                                 MainActivity.loadAndShowRewardedAd(
                                                     activity = activity,
                                                     onAdWatched = {
-                                                        MainActivity.unlockStoryForUser(userId, storyId, "ad")
-                                                        unlockedStoryIds.value = unlockedStoryIds.value + storyId
+                                                        MainActivity.unlockStoryForUser(
+                                                            userId,
+                                                            storyId,
+                                                            "ad"
+                                                        )
+                                                        unlockedStoryIds.value =
+                                                            unlockedStoryIds.value + storyId
                                                         selectedStory = story
                                                         loadingStoryId = null
                                                     },
@@ -560,9 +580,14 @@ class MainActivity : ComponentActivity() {
                                                 loadingStoryId = null
                                             }
                                         }
+
                                         index == 4 -> {
                                             if (subscribed) {
-                                                MainActivity.unlockStoryForUser(userId, storyId, "subscription")
+                                                MainActivity.unlockStoryForUser(
+                                                    userId,
+                                                    storyId,
+                                                    "subscription"
+                                                )
                                                 selectedStory = story
                                             } else {
                                                 Toast.makeText(
@@ -604,12 +629,16 @@ class MainActivity : ComponentActivity() {
                                                     else -> "🎬 AD"
                                                 }
                                             }
+
                                             index == 4 -> if (subscribed) "✓ PREMIUM" else "🔒 PRO"
                                             else -> "🔒"
                                         },
                                         color = when {
                                             index == 0 -> Color.Green
-                                            index in 1..3 && (subscribed || unlockedStoryIds.value.contains(storyId)) -> Color.Blue
+                                            index in 1..3 && (subscribed || unlockedStoryIds.value.contains(
+                                                storyId
+                                            )) -> Color.Blue
+
                                             index == 4 && subscribed -> Color.Blue
                                             else -> Color.Gray
                                         }
@@ -658,14 +687,14 @@ class MainActivity : ComponentActivity() {
                     // Create 5 stories for today
                     for (i in 0..4) {
                         val story = hashMapOf(
-                            "title" to when(i) {
+                            "title" to when (i) {
                                 0 -> "The Dragon's Dawn (Free)"
                                 1 -> "Wizard's Quest"
                                 2 -> "Knights of Tomorrow"
                                 3 -> "Magic Kingdom"
                                 else -> "Premium Epic"
                             },
-                            "content" to when(i) {
+                            "content" to when (i) {
                                 0 -> """
 The dragon stirred in the early morning mist, its scales catching the first rays of sunlight. 
 
@@ -677,6 +706,7 @@ As the creature unfurled its massive wings, villagers in the valley below gasped
 
 And so began the most extraordinary chapter in the kingdom's history...
                                 """.trimIndent()
+
                                 1 -> "The wizard's tower stood at the edge of reality, where magic met the mundane world..."
                                 2 -> "In the year 2157, the last knights of Earth prepared for their greatest battle..."
                                 3 -> "The magic kingdom appeared only once every hundred years, and today was that day..."
@@ -710,44 +740,52 @@ And so began the most extraordinary chapter in the kingdom's history...
 
             Button(
                 onClick = {
-                    // Force refresh the query
-                    db.collection("stories")
-                        .get()
-                        .addOnSuccessListener { documents ->
-                            Toast.makeText(
-                                context,
-                                "Found ${documents.size()} total stories",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                    // Launch coroutine to make network call
+                    lifecycleScope.launch {
+                        try {
+                            withContext(Dispatchers.IO) {
+                                val client = OkHttpClient()
+                                val request = Request.Builder()
+                                    .url("https://us-central1-fantasy-fiction-reader-f892f.cloudfunctions.net/generate_stories_manual?key=test-key-123")
+                                    .build()
 
-                            // Also check today's stories
-                            db.collection("stories")
-                                .whereEqualTo("publishDate", today)
-                                .get()
-                                .addOnSuccessListener { todayDocs ->
+                                val response = client.newCall(request).execute()
+                                val responseBody = response.body?.string() ?: "No response"
+
+                                withContext(Dispatchers.Main) {
                                     Toast.makeText(
                                         context,
-                                        "Found ${todayDocs.size()} stories for today ($today)",
+                                        responseBody,
                                         Toast.LENGTH_LONG
                                     ).show()
+
+                                    // Refresh stories after generation
+                                    db.collection("stories")
+                                        .whereEqualTo("publishDate", today)
+                                        .get()
+                                        .addOnSuccessListener { documents ->
+                                            val sortedStories = documents.map { doc ->
+                                                doc.data.toMutableMap().apply {
+                                                    put("id", doc.id)
+                                                }
+                                            }.sortedBy { (it["dayIndex"] as? Long)?.toInt() ?: 0 }
+                                            stories.value = sortedStories
+                                        }
                                 }
+                            }
+                        } catch (e: Exception) {
+                            Toast.makeText(
+                                context,
+                                "Error: ${e.message}",
+                                Toast.LENGTH_LONG  // Changed to LONG to see full message
+                            ).show()
+                            Log.e("MainActivity", "HTTP Error", e)  // Add this line
                         }
+                    }
                 },
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.Red
+                    containerColor = Color.Green
                 )
-            ) {
-                Text("Debug: Check Stories")
-            }
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            Button(
-                onClick = {
-                    // Trigger story generation manually
-                    val url = "https://us-central1-fantasy-fiction-reader-f892f.cloudfunctions.net/generate-stories-manual?key=test-key-123"
-                    // TODO: Make HTTP call
-                }
             ) {
                 Text("Debug: Generate Stories Now")
             }

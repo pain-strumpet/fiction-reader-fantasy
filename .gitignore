@@ -32,3 +32,6 @@ app/google-services.json
 # Sensitive configuration
 Config.kt
 app/src/main/java/com/reader/fiction/fantasy/Config.kt
+
+/app/build/
+/build/
