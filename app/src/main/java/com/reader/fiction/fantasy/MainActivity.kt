@@ -71,6 +71,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.delay
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import java.util.concurrent.TimeUnit
 
 class MainActivity : ComponentActivity() {
 
@@ -330,6 +334,8 @@ class MainActivity : ComponentActivity() {
         val lifecycleOwner = androidx.lifecycle.compose.LocalLifecycleOwner.current
         val lifecycleScope = lifecycleOwner.lifecycleScope
 
+        var isGenerating by remember { mutableStateOf(false) }
+
         // Show story reader if a story is selected
         if (selectedStory != null) {
             StoryReaderScreen(
@@ -510,13 +516,14 @@ class MainActivity : ComponentActivity() {
                                     selectedStory = story
                                 } else {
                                     // Today's stories use the existing click logic
-                                    when {
-                                        index == 0 -> {
+                                    when (index) {
+                                        0 -> {
+                                            // Always record the unlock, even for free stories
                                             MainActivity.unlockStoryForUser(userId, storyId, "free")
                                             selectedStory = story
                                         }
 
-                                        index in 1..3 -> {
+                                        in 1..3 -> {
                                             // Subscribers get instant access
                                             if (subscribed) {
                                                 MainActivity.unlockStoryForUser(
@@ -581,7 +588,7 @@ class MainActivity : ComponentActivity() {
                                             }
                                         }
 
-                                        index == 4 -> {
+                                        4 -> {
                                             if (subscribed) {
                                                 MainActivity.unlockStoryForUser(
                                                     userId,
@@ -680,114 +687,160 @@ class MainActivity : ComponentActivity() {
 
             Button(
                 onClick = {
-                    val db = Firebase.firestore
-                    val today = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US)
-                        .format(java.util.Date())
+                    if (!isGenerating) {
+                        isGenerating = true
+                        lifecycleScope.launch {
+                            try {
+                                withContext(Dispatchers.IO) {
+                                    val client = OkHttpClient.Builder()
+                                        .connectTimeout(60, java.util.concurrent.TimeUnit.SECONDS)
+                                        .readTimeout(60, java.util.concurrent.TimeUnit.SECONDS)
+                                        .build()
 
-                    // Create 5 stories for today
-                    for (i in 0..4) {
-                        val story = hashMapOf(
-                            "title" to when (i) {
-                                0 -> "The Dragon's Dawn (Free)"
-                                1 -> "Wizard's Quest"
-                                2 -> "Knights of Tomorrow"
-                                3 -> "Magic Kingdom"
-                                else -> "Premium Epic"
-                            },
-                            "content" to when (i) {
-                                0 -> """
-The dragon stirred in the early morning mist, its scales catching the first rays of sunlight. 
+                                    // Generate with ONE AI service (not all three)
+                                    val selectedAI = "openai" // Change this to test different AIs
 
-For a thousand years, it had slumbered beneath the mountain, waiting for this moment. The prophecy spoke of a dawn when the world would need its ancient wisdom once more.
+                                    val request = Request.Builder()
+                                        .url("https://us-central1-fantasy-fiction-reader-f892f.cloudfunctions.net/generate_stories_manual?key=test-key-123&ai=$selectedAI")
+                                        .build()
 
-As the creature unfurled its massive wings, villagers in the valley below gasped in awe. This was not the fearsome beast of legend, but a majestic guardian, eyes filled with timeless knowledge.
+                                    val response = client.newCall(request).execute()
+                                    val responseBody = response.body?.string() ?: "No response"
 
-"Fear not," the dragon's voice rumbled like distant thunder, "I have awakened not to destroy, but to guide you through the darkness that approaches."
+                                    withContext(Dispatchers.Main) {
+                                        Toast.makeText(
+                                            context,
+                                            responseBody,
+                                            Toast.LENGTH_LONG
+                                        ).show()
 
-And so began the most extraordinary chapter in the kingdom's history...
-                                """.trimIndent()
+                                        // Immediate refresh - no delay needed
+                                        db.collection("stories")
+                                            .whereEqualTo("publishDate", today)
+                                            .get()
+                                            .addOnSuccessListener { documents ->
+                                                val sortedStories = documents.map { doc ->
+                                                    doc.data.toMutableMap().apply {
+                                                        put("id", doc.id)
+                                                    }
+                                                }.sortedBy {
+                                                    (it["dayIndex"] as? Long)?.toInt() ?: 0
+                                                }
+                                                stories.value = sortedStories
+                                                isGenerating = false
 
-                                1 -> "The wizard's tower stood at the edge of reality, where magic met the mundane world..."
-                                2 -> "In the year 2157, the last knights of Earth prepared for their greatest battle..."
-                                3 -> "The magic kingdom appeared only once every hundred years, and today was that day..."
-                                else -> "This premium story contains the secrets of the universe itself..."
-                            },
-                            "publishDate" to today,
-                            "dayIndex" to i.toLong()
-                        )
-
-                        db.collection("stories")
-                            .add(story)
-                            .addOnSuccessListener {
-                                if (i == 4) {
+                                                // Switch to Today tab
+                                                if (selectedTab == 1) {
+                                                    selectedTab = 0
+                                                }
+                                            }
+                                            .addOnFailureListener {
+                                                isGenerating = false
+                                            }
+                                    }
+                                }
+                            } catch (e: Exception) {
+                                withContext(Dispatchers.Main) {
                                     Toast.makeText(
                                         context,
-                                        "Added 5 stories for today!",
-                                        Toast.LENGTH_SHORT
+                                        "Error: ${e.message}",
+                                        Toast.LENGTH_LONG
                                     ).show()
+                                    isGenerating = false
                                 }
+                                Log.e("MainActivity", "HTTP Error", e)
+                            }
+                        }
+                    }
+                },
+                enabled = !isGenerating,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = if (isGenerating) Color.Gray else Color.Green
+                )
+            ) {
+                if (isGenerating) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        CircularProgressIndicator(
+                            modifier = Modifier.size(16.dp),
+                            color = Color.White,
+                            strokeWidth = 2.dp
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Generating...")
+                    }
+                } else {
+                    Text("Generate AI Stories")
+                }
+            }  // This closes the Generate button
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Button(
+                onClick = {
+                    if (userId.isNotEmpty()) {
+                        db.collection("users")
+                            .document(userId)
+                            .collection("unlockedStories")
+                            .get()
+                            .addOnSuccessListener { documents ->
+                                var deleted = 0
+                                for (doc in documents) {
+                                    doc.reference.delete()
+                                    deleted++
+                                }
+                                Toast.makeText(
+                                    context,
+                                    "Cleared $deleted old unlocks",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+
+                                // Clear local state too
+                                unlockedStoryIds.value = emptySet()
+                                libraryStories.value = emptyList()
                             }
                     }
                 },
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.secondary
-                )
+                colors = ButtonDefaults.buttonColors(containerColor = Color.Red)
             ) {
-                Text("Add 5 Daily Stories")
+                Text("Clear My Library")
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
             Button(
                 onClick = {
-                    // Launch coroutine to make network call
-                    lifecycleScope.launch {
-                        try {
-                            withContext(Dispatchers.IO) {
-                                val client = OkHttpClient()
-                                val request = Request.Builder()
-                                    .url("https://us-central1-fantasy-fiction-reader-f892f.cloudfunctions.net/generate_stories_manual?key=test-key-123")
-                                    .build()
-
-                                val response = client.newCall(request).execute()
-                                val responseBody = response.body?.string() ?: "No response"
-
-                                withContext(Dispatchers.Main) {
-                                    Toast.makeText(
-                                        context,
-                                        responseBody,
-                                        Toast.LENGTH_LONG
-                                    ).show()
-
-                                    // Refresh stories after generation
-                                    db.collection("stories")
-                                        .whereEqualTo("publishDate", today)
-                                        .get()
-                                        .addOnSuccessListener { documents ->
-                                            val sortedStories = documents.map { doc ->
-                                                doc.data.toMutableMap().apply {
-                                                    put("id", doc.id)
-                                                }
-                                            }.sortedBy { (it["dayIndex"] as? Long)?.toInt() ?: 0 }
-                                            stories.value = sortedStories
-                                        }
-                                }
-                            }
-                        } catch (e: Exception) {
+                    // Force refresh library
+                    db.collection("users")
+                        .document(userId)
+                        .collection("unlockedStories")
+                        .get()
+                        .addOnSuccessListener { unlockedDocs ->
                             Toast.makeText(
                                 context,
-                                "Error: ${e.message}",
-                                Toast.LENGTH_LONG  // Changed to LONG to see full message
+                                "Found ${unlockedDocs.size()} unlocked stories",
+                                Toast.LENGTH_SHORT
                             ).show()
-                            Log.e("MainActivity", "HTTP Error", e)  // Add this line
+
+                            val storyIds = unlockedDocs.map { it.id }
+                            if (storyIds.isNotEmpty()) {
+                                db.collection("stories")
+                                    .whereIn("__name__", storyIds)
+                                    .get()
+                                    .addOnSuccessListener { storyDocs ->
+                                        libraryStories.value = storyDocs.map { doc ->
+                                            doc.data.toMutableMap().apply {
+                                                put("id", doc.id)
+                                            }
+                                        }.sortedByDescending {
+                                            it["publishDate"] as? String ?: ""
+                                        }
+                                    }
+                            }
                         }
-                    }
                 },
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.Green
-                )
+                colors = ButtonDefaults.buttonColors(containerColor = Color.Blue)
             ) {
-                Text("Debug: Generate Stories Now")
+                Text("Refresh Library")
             }
         }
     }

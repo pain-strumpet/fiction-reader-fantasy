@@ -1,2 +1,5 @@
 functions-framework==3.*
 firebase-admin==6.*
+openai==1.*
+anthropic==0.*
+google-generativeai==0.*
